@@ -10,9 +10,13 @@ public class JournalEntry {
 	private Emotion emotion;
 	/**Full Constructor for an journal entry that takes in the description, 
 	 * score and date. **/
-	public JournalEntry(String description, int score,
+	public JournalEntry(){
+		
+	}
+	public JournalEntry(int entryID,String description, int score,
 			Date entryDate, Emotion emotion) {
 		super();
+		this.entryId = entryID;
 		this.description = description;
 		this.score = score;
 		this.entryDate = entryDate;
