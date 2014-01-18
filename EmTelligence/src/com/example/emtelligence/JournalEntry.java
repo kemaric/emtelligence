@@ -7,22 +7,24 @@ public class JournalEntry {
 	private String description;
 	private int score;
 	public Date entryDate;
-	
-	/**Full Constructor for an journal entry that takes in the **/
+	private Emotion emotion;
+	/**Full Constructor for an journal entry that takes in the description, 
+	 * score and date. **/
 	public JournalEntry(String description, int score,
-			Date entryDate) {
+			Date entryDate, Emotion emotion) {
 		super();
 		this.description = description;
 		this.score = score;
 		this.entryDate = entryDate;
-		//this.entryId = 0;
+		this.emotion = emotion;
 	}
 	
 	/**Basic Constructor that only have a score but no description **/
-	public JournalEntry(int score, Date entrydate){
+	public JournalEntry(Date entrydate){
 		super();
-		this.score = score;
+		this.score = 0;
 		this.entryDate = entrydate;
+		this.emotion = new Emotion();
 	}
 	
 	
