@@ -31,6 +31,7 @@
 	<string name="active">active</string>
 	<string name="focused">focused</string>
 	<string name="calm">calm</string>
+	<string name="funny">funny</string>
 	
 	<!-- Neutral emotions -->
 	<string name="indifferent">indifferent</string>
@@ -41,10 +42,17 @@
 	<string name="sad">sad</string>
 	<string name="anxious">anxious</string>
 	<string name="angry">angry</string>	
-	<string name="jealous">jealous</string>
+	<string name="jealous">jealous</string>	
+	
+	<string name="surprised">surprised</string>
+	
+	
+	<string name="submit">Submit</string>
+
 	<string name="entry_emotion">emotion</string>
 	<string name="entry_description">description</string>
 	<string name="entry_date">date</string>
 	<string name="entry_score">score</string>
 	<string name="entry_id">entryId</string>	
+
 </resources>
