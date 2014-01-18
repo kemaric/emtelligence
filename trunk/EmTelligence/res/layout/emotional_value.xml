@@ -33,7 +33,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:background="@color/trans"
-	        android:src="@drawable/happy_164" android:contentDescription="@string/positive"/>
+	        android:src="@drawable/happy_164" android:contentDescription="@string/positive_sign"/>
     	
     	<ImageButton
 	        android:id="@+id/negativeButton"
