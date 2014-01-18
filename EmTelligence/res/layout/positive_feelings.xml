@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+	android:background="@drawable/bg"
     tools:context=".MainActivity" >
 
     <TextView
@@ -20,16 +21,19 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TableLayout
+        android:id="@+id/tableLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:stretchColumns="1"
-        android:layout_marginTop="20dp" >
+        android:layout_marginTop="20dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:stretchColumns="1" >
 
         <TableRow
             android:id="@+id/tableRow1"
-            android:layout_width="0dp" 
+            android:layout_width="0dp"
             android:layout_height="wrap_content" >
 
             <Button
@@ -37,88 +41,123 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/happy"
+                android:drawableTop="@drawable/happy_hov"
+                android:onClick="clickEmoticon" 
+                android:paddingBottom="15dp"
                 android:text="@string/happy"
                 android:textSize="12sp"
                 android:width="30dip" />
 
             <Button
                 android:id="@+id/buttonConfident"
-               	android:drawableTop="@drawable/confident"
-               	android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="30dip"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/confident_hov"
+                android:paddingBottom="15dp"
+                android:text="@string/confident"
                 android:textSize="12sp"
-                android:text="@string/confident" />
-            
-            <Button
+                android:width="30dip" />
+
+<!--             <Button
                 android:id="@+id/buttonActive"
-               	android:drawableTop="@drawable/active"
-               	android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="30dip"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/active3"
+                android:paddingBottom="15dp"
+                android:text="@string/active"
                 android:textSize="12sp"
-                android:text="@string/active" />
-            
+                android:width="30dip" /> -->
+
+            <ToggleButton
+                android:id="@+id/buttonActive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/active_hov"
+                android:textOff="@string/active"
+                android:textOn="@string/active" />
+
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow2"
-            android:layout_width="0dp" 
-
+            android:layout_width="0dp"
             android:layout_height="wrap_content" >
 
              <Button
-                 android:id="@+id/buttonAttractive"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:background="@android:color/transparent"
-                 android:drawableTop="@drawable/attractive"
-                 android:text="@string/attractive"
-                 android:textSize="12sp"
-                 android:width="30dip" />
+                android:id="@+id/buttonAttractive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/attractive_hov"
+                android:paddingBottom="15dp"
+                android:text="@string/attractive"
+                android:textSize="12sp"
+                android:width="30dip" /> 
 
             <Button
                 android:id="@+id/buttonFocused"
-               	android:drawableTop="@drawable/focused"
-               	android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="30dip"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/focused_hov"
+                android:paddingBottom="15dp"
+                android:text="@string/focused"
                 android:textSize="12sp"
-                android:text="@string/focused" />
-            
+                android:width="30dip" />
+
             <Button
                 android:id="@+id/buttonCalm"
-               	android:drawableTop="@drawable/calm"
-               	android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="30dip"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/calm_hov"
+                android:paddingBottom="15dp"
+                android:text="@string/calm"
                 android:textSize="12sp"
-                android:text="@string/calm" />
-
+                android:width="30dip" />
         </TableRow>
 
-<!--         <TableRow
+        <TableRow
             android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/button5"
-               	android:drawableTop="@drawable/attractive"
-               	android:background="@android:color/transparent"
+                android:id="@+id/buttonFunny"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="30dip"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/funny_hov"
+                android:paddingBottom="15dp"
+                android:text="@string/funny"
                 android:textSize="12sp"
-                android:text="@string/attractive" />
+                android:width="30dip" />
 
-        </TableRow> -->
+            <Button
+                android:id="@+id/buttonSurprised"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/surprised_hov"
+                android:paddingBottom="15dp"
+                android:text="@string/surprised"
+                android:textSize="12sp"
+                android:width="30dip" />
 
+
+        </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/tableLayout1"
+        android:layout_marginBottom="18dp"
+        android:text="@string/submit" />
 
 </RelativeLayout>
