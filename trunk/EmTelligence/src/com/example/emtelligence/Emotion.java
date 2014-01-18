@@ -8,7 +8,16 @@ public class Emotion {
 		private EmotionalValue(int id){this.id = id;}
 		public int getValue(){return id;}
 		
-		public String toString(){return "" + id + "";}
+		/**Gets the EmotionalValue object based on the value input.**/
+		public static EmotionalValue valueOf(int val) {
+		    for (EmotionalValue category : values()) {
+		        if (category.equals(val)) {
+		            return category;
+		        }
+		    }    
+		    throw new IllegalArgumentException(String.valueOf(val));
+		}
+		//public String toString(){return "" + id + "";}
 	}
 	
 	private String feeling;
