@@ -11,13 +11,13 @@ import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
 
-	Context context;
+	//Context context;
 	private ImageButton recordB, trackB;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		context = this;
+		//context = this;
 		
 		recordB = (ImageButton)findViewById(R.id.recordButton);
 		trackB = (ImageButton)findViewById(R.id.trackButton);
@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
 		recordB.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent emotionActivity = new Intent(MainActivity.this, EmotionActivity.class);
+				Intent emotionActivity = new Intent(getApplicationContext(), EmotionActivity.class);
 				startActivity(emotionActivity);
 			}
 		});
@@ -35,8 +35,8 @@ public class MainActivity extends Activity {
 		trackB.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
+				Intent emotionActivity = new Intent(getApplicationContext(), TrackingActivity.class);
+				startActivity(emotionActivity);
 			}
 		});
 	}
