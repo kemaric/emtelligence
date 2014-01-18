@@ -32,34 +32,34 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/buttonHappy"
+                android:id="@+id/buttonSad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/happy"
-                android:text="@string/happy"
+                android:drawableTop="@drawable/sad"
+                android:text="@string/sad"
                 android:textSize="12sp"
                 android:width="30dip" />
 
             <Button
-                android:id="@+id/buttonConfident"
-               	android:drawableTop="@drawable/confident"
+                android:id="@+id/buttonAngry"
+               	android:drawableTop="@drawable/angry"
                	android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
                 android:textSize="12sp"
-                android:text="@string/confident" />
+                android:text="@string/angry" />
             
             <Button
-                android:id="@+id/buttonActive"
-               	android:drawableTop="@drawable/active"
+                android:id="@+id/buttonAnxious"
+               	android:drawableTop="@drawable/anxious"
                	android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
                 android:textSize="12sp"
-                android:text="@string/active" />
+                android:text="@string/anxious" />
             
         </TableRow>
 
@@ -69,16 +69,16 @@
             android:layout_height="wrap_content" >
 
              <Button
-                android:id="@+id/buttonAttractive"
-               	android:drawableTop="@drawable/attractive"
+                android:id="@+id/buttonJealous"
+               	android:drawableTop="@drawable/jealous"
                	android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
                 android:textSize="12sp"
-                android:text="@string/attractive" />
+                android:text="@string/jealous" />
 
-            <Button
+            <!-- <Button
                 android:id="@+id/buttonFocused"
                	android:drawableTop="@drawable/focused"
                	android:background="@android:color/transparent"
@@ -96,11 +96,11 @@
                 android:layout_height="wrap_content"
                 android:width="30dip"
                 android:textSize="12sp"
-                android:text="@string/calm" />
+                android:text="@string/calm" /> -->
 
         </TableRow>
 
-<!--         <TableRow
+       <!--  <TableRow
             android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >

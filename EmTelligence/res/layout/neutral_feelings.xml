@@ -32,38 +32,38 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/buttonHappy"
+                android:id="@+id/buttonBored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/happy"
-                android:text="@string/happy"
+                android:drawableTop="@drawable/bored"
+                android:text="@string/bored"
                 android:textSize="12sp"
                 android:width="30dip" />
 
             <Button
-                android:id="@+id/buttonConfident"
-               	android:drawableTop="@drawable/confident"
+                android:id="@+id/buttonConfused"
+               	android:drawableTop="@drawable/confused"
                	android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
                 android:textSize="12sp"
-                android:text="@string/confident" />
+                android:text="@string/confused" />
             
             <Button
-                android:id="@+id/buttonActive"
-               	android:drawableTop="@drawable/active"
+                android:id="@+id/buttonIndifferent"
+               	android:drawableTop="@drawable/indifferent"
                	android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
                 android:textSize="12sp"
-                android:text="@string/active" />
+                android:text="@string/indifferent" />
             
         </TableRow>
 
-        <TableRow
+ <!--        <TableRow
             android:id="@+id/tableRow2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
@@ -98,25 +98,9 @@
                 android:textSize="12sp"
                 android:text="@string/calm" />
 
-        </TableRow>
-
-<!--         <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <Button
-                android:id="@+id/button5"
-               	android:drawableTop="@drawable/attractive"
-               	android:background="@android:color/transparent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="30dip"
-                android:textSize="12sp"
-                android:text="@string/attractive" />
-
         </TableRow> -->
 
+       
     </TableLayout>
 
 </RelativeLayout>
