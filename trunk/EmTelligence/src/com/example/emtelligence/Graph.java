@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+
 import com.jjoe64.graphview.BarGraphView;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphView.GraphViewData;
@@ -20,13 +22,25 @@ public class Graph extends Activity {
         /*
          * Get the Journal Entries from
          */
+        ArrayList<JournalEntry> JournalList;
+        JournalEntry entry = null;
+        
+        ArrayList<String> dates;
+        String date = "", tempDate = "";
         
         int num = 0; //Make number of entries
         GraphViewData[] data = new GraphViewData[num];
-        int sum = 0, date = 0; 
+        int sum = 0, day = 0, index = 0; 
         for (int i=0; i<num; i++) { //Loop through all dates
-           //sum = sum of all entries on that day
-           data[date] = new GraphViewData(date, sum);
+        //Look at this in the morning when you can think
+        	//sum = sum of all entries on that day
+        	entry = JournalList.get(index);
+        	tempDate = entry.getEntryDate().toString();
+        	tempDate = tempDate.substring(4, 11) + tempDate.substring(24);
+            if(tempDate.equals(date)){
+            	
+            }
+            data[i] = new GraphViewData(i, sum);
         }
 
 
