@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/neutral_sign"
-                    android:src="@drawable/happy_164" />
+                    android:src="@drawable/neutral_164" />
 
             </TableRow>
 
@@ -86,7 +86,7 @@
                     android:layout_marginTop="10dp"
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/negative_sign"
-                    android:src="@drawable/happy_trans_164" />
+                    android:src="@drawable/negative_164" />
 
                 <TextView
                     android:id="@+id/negativeText"
