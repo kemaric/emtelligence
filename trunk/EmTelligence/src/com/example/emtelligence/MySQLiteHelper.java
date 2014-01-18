@@ -43,18 +43,17 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 	public void addJournalEntry(JournalEntry entry){
 		//for logging
-		Log.d("addBook", entry.toString()); 
-
+		Log.d("addJournalEntry", entry.toString()); 
 		// 1. get reference to writable DB
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		// 2. create ContentValues to add key "column"/value
 		ContentValues values = new ContentValues();
-		values.put(KEY_TITLE, book.getTitle()); // get title 
-		values.put(KEY_AUTHOR, book.getAuthor()); // get author
-
+		values.put(DATE_TIME,entry.getEntryDate().toString());  
+		values.put(EMOTION, entry.getEmotion().getFeeling()); 
+		values.put(SCORE, String.valueOf(entry.getEmotion().getEv().getValue())); 
 		// 3. insert
-		db.insert(TABLE_BOOKS, // table
+		db.insert(, // table
 				null, //nullColumnHack
 				values); // key/value -> keys = column names/ values = column values
 
