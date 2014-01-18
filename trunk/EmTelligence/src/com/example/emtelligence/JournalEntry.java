@@ -54,6 +54,13 @@ public class JournalEntry {
 	public void setEntryDate(Date entryDate) {
 		this.entryDate = entryDate;
 	}
+
+	@Override
+	public String toString() {
+		return "JournalEntry [entryId=" + entryId + ", description="
+				+ description + ", score=" + score + ", entryDate=" + entryDate
+				+ ", emotion=" + emotion + "]";
+	}
 	
 	
 }
