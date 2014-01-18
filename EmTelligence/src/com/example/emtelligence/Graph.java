@@ -22,6 +22,8 @@ public class Graph extends Activity {
         /*
          * Get the Journal Entries from
          */
+/*
+ * For testing purposes  
         ArrayList<JournalEntry> JournalList = new ArrayList<JournalEntry>();
         JournalEntry entry = null, nextEntry = null;
 
@@ -52,7 +54,13 @@ public class Graph extends Activity {
         }
 
         GraphViewData[] data = (GraphViewData[]) dataList.toArray();
-
+*/
+        //For testing
+        GraphViewData[] data = new GraphViewData[40];
+        for(int i = 0; i<40; i++){
+        	data[i] = new GraphViewData(i, i%4 - 2);
+        }
+        
        // graph with dynamically generated horizontal and vertical labels
         GraphView graphView;
         graphView = new LineGraphView(
