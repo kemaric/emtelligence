@@ -23,33 +23,41 @@ public class Graph extends Activity {
          * Get the Journal Entries from
          */
         ArrayList<JournalEntry> JournalList = new ArrayList();
-        JournalEntry entry = null;
+        JournalEntry entry = null, nextEntry = null;
         
         ArrayList<String> dates;
         String date = "", tempDate = "";
         
-        int num = 0; //Make number of entries
-        GraphViewData[] data = new GraphViewData[num];
-        int sum = 0, day = 0, index = 0; 
-        for (int i=0; i<num; i++) { //Loop through all dates
-        //Look at this in the morning when you can think
-        	//sum = sum of all entries on that day
+        int num = JournalList.size(); //Make number of entries
+        ArrayList<GraphViewData> dataList = new ArrayList();
+        int sum = 0, index = 0;
+        for (int day=0; index<num; day++) { //Loop through all dates
         	entry = JournalList.get(index);
-        	tempDate = entry.getEntryDate().toString();
-        	tempDate = tempDate.substring(4, 11) + tempDate.substring(24);
-            if(tempDate.equals(date)){
-            	
+        	sum = entry.getScore();
+        	date = entry.getEntryDate().toString();
+        	date = date.substring(4, 11) + date.substring(24);
+        	dates.add(date);
+        	tempDate = date;
+            while(tempDate.equals(date) && index < num){
+            	index += 1;
+            	entry = JournalList.get(index);
+            	tempDate = entry.getEntryDate().toString();
+            	tempDate = date.substring(4, 11) + date.substring(24);
+            	if(tempDate.equals(date)){
+            		sum += entry.getScore();
+            	}
             }
-            data[i] = new GraphViewData(i, sum);
+            dataList.add(new GraphViewData(day, sum));
         }
 
+        GraphViewData[] data = (GraphViewData[]) dataList.toArray();
 
-       // graph with dynamically genereated horizontal and vertical labels
+       // graph with dynamically generated horizontal and vertical labels
         GraphView graphView;
-                graphView = new LineGraphView(
-                                this
-                                , "GraphViewDemo"
-                );
+        graphView = new LineGraphView(
+            this
+            , "GraphViewDemo"
+        );
          
         // add data
         graphView.addSeries(new GraphViewSeries(data));
