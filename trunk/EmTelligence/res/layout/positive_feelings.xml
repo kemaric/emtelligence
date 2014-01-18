@@ -33,12 +33,13 @@
 
             <Button
                 android:id="@+id/button1"
-               	android:drawableTop="@drawable/happy_trans"
-               	android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="30dip"
-                android:text="@string/happy" />
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/happy_trans"
+                android:text="@string/happy"
+                android:textSize="12sp"
+                android:width="30dip" />
 
             <Button
                 android:id="@+id/button2"
@@ -47,6 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
+                android:textSize="12sp"
                 android:text="@string/happy" />
             
             <Button
@@ -56,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
+                android:textSize="12sp"
                 android:text="@string/happy" />
             
         </TableRow>
@@ -72,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
+                android:textSize="12sp"
                 android:text="@string/attractive" />
 
             <Button
@@ -81,6 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
+                android:textSize="12sp"
                 android:text="@string/attractive" />
             
             <Button
@@ -90,6 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
+                android:textSize="12sp"
                 android:text="@string/attractive" />
 
         </TableRow>
@@ -106,6 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="30dip"
+                android:textSize="12sp"
                 android:text="@string/attractive" />
 
         </TableRow>
