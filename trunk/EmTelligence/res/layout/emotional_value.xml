@@ -16,8 +16,32 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="20dp"
-        android:text="@string/i_feel"
+        android:text="@string/i_feel..."
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical" >
+    	
+    	<ImageButton
+	        android:id="@+id/imageButton1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@color/trans"
+	        android:src="@drawable/happy_164" />
+    	
+    	    <ImageButton
+        android:id="@+id/ImageButton01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:background="@color/trans"
+        android:src="@drawable/happy_164" />
+    </LinearLayout>
 
 </RelativeLayout>
