@@ -11,6 +11,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	// Database Name
 	private static final String DATABASE_NAME = "JournalDB";
 
+	 // Books table name
+    private static final String TABLE_JOURNAL_ENTRIES = "journal_entries";
+	
 	private static final String DATE_TIME = "date/time";
 	private static final String	EMOTION = "emotion";
 	private static final String SCORE = "score";
@@ -53,7 +56,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		values.put(EMOTION, entry.getEmotion().getFeeling()); 
 		values.put(SCORE, String.valueOf(entry.getEmotion().getEv().getValue())); 
 		// 3. insert
-		db.insert(, // table
+		db.insert(TABLE_JOURNAL_ENTRIES, // table
 				null, //nullColumnHack
 				values); // key/value -> keys = column names/ values = column values
 
