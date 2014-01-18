@@ -13,6 +13,7 @@
 	
 	<string name="positive_sign">(+1)</string>
 	<string name="negative_sign">(-1)</string>
+	<string name="neutral_sign">(0)</string>
 	
 	
 </resources>
