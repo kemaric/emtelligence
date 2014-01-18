@@ -41,7 +41,10 @@
 	<string name="sad">sad</string>
 	<string name="anxious">anxious</string>
 	<string name="angry">angry</string>	
-	<string name="jealous">jealous</string>	
-	
-	
+	<string name="jealous">jealous</string>
+	<string name="entry_emotion">emotion</string>
+	<string name="entry_description">description</string>
+	<string name="entry_date">date</string>
+	<string name="entry_score">score</string>
+	<string name="entry_id">entryId</string>	
 </resources>
