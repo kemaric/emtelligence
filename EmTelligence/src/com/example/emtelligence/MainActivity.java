@@ -8,6 +8,7 @@ import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 
@@ -16,7 +17,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/LHANDW.ttf");
+		//Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/LHANDW.ttf");
 		setContentView(R.layout.activity_main);
 
 		//context = this;		
@@ -24,8 +25,8 @@ public class MainActivity extends Activity {
 		trackB = (Button)findViewById(R.id.trackButton);
 
 		
-		recordB.setTypeface(mFont);
-		trackB.setTypeface(mFont);
+		//recordB.setTypeface(mFont);
+		//trackB.setTypeface(mFont);
 		
 		/*function for record button action to make journal entry*/
 		recordB.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +35,7 @@ public class MainActivity extends Activity {
 				Intent emotionActivity = new Intent(getApplicationContext(), EmotionActivity.class);
 				startActivity(emotionActivity);
 			}
+			
 		});
 		
 		//Taking you to the page of tracking your past journal entries

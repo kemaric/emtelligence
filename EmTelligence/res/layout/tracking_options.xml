@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/seeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/see"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignLeft="@+id/seeText"
+        android:layout_below="@+id/seeText"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/journalButton"
+            android:layout_width="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/journal" />
+
+        <Button
+            android:id="@+id/progressButton"
+            android:layout_width="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/progress_plot" />
+
+        <Button
+            android:id="@+id/OTHERButton"
+            android:layout_width="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/progress_plot" />
+    </LinearLayout>
+
+</RelativeLayout>
