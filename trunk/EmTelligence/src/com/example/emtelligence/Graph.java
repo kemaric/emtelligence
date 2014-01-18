@@ -22,14 +22,15 @@ public class Graph extends Activity {
         /*
          * Get the Journal Entries from
          */
-        ArrayList<JournalEntry> JournalList = new ArrayList();
+        ArrayList<JournalEntry> JournalList = new ArrayList<JournalEntry>();
         JournalEntry entry = null, nextEntry = null;
+
         
-        ArrayList<String> dates;
+        ArrayList<String> dates = new ArrayList<String>();
         String date = "", tempDate = "";
         
         int num = JournalList.size(); //Make number of entries
-        ArrayList<GraphViewData> dataList = new ArrayList();
+        ArrayList<GraphViewData> dataList = new ArrayList<GraphViewData>();
         int sum = 0, index = 0;
         for (int day=0; index<num; day++) { //Loop through all dates
         	entry = JournalList.get(index);
