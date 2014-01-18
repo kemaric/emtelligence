@@ -48,7 +48,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_launcher" 
+            android:drawableTop="@drawable/home_left" 
             android:text="@string/record"/>
 
         <Button             
@@ -58,7 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_launcher" 
+            android:drawableTop="@drawable/home_right" 
             android:text="@string/track"/>
 
     </LinearLayout>
