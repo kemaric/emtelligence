@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TableLayout android:id="@+id/score_table"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"> 
+        <TableRow android:id="@+id/entryTable">
+              <!--   <TextView android:id="@+id/entryIDCol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginTop="47dp"
+                    android:text="@string/entry_id"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/> -->
+     			<TextView android:id="@+id/entryDateCol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginTop="47dp"
+                    android:text="@string/entry_date"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+     			<TextView android:id="@+id/entryEmotionCol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginTop="47dp"
+                    android:text="@string/entry_emotion"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+     			<TextView android:id="@+id/entry_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginTop="47dp"
+                    android:text="@string/entry_score"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+       	</TableRow>             
+    </TableLayout>
+</ScrollView>
+
+</RelativeLayout>
