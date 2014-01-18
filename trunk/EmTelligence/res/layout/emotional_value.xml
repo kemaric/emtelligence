@@ -19,72 +19,88 @@
         android:text="@string/i_feel..."
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="60dp"
-        android:orientation="vertical" >
-    	
-    	<ImageButton
-	        android:id="@+id/positiveButton"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:background="@android:color/transparent"
-	        android:src="@drawable/happy_164" android:contentDescription="@string/positive_sign"/>
-    	
-    	<ImageButton
-    	    android:id="@+id/neutralButton"
-    	    android:layout_width="wrap_content"
-    	    android:layout_height="wrap_content"
-    	    android:layout_marginTop="10dp"
-    	    android:background="@android:color/transparent"               	
-    	    android:contentDescription="@string/neutral_sign"
-    	    android:src="@drawable/happy_164" />
-    
-    	<ImageButton
-    	    android:id="@+id/negativeButton"
-    	    android:layout_width="wrap_content"
-    	    android:layout_height="wrap_content"
-    	    android:layout_marginTop="10dp"
-    	    android:background="@android:color/transparent"
-    	    android:contentDescription="@string/negative_sign"
-    	    android:src="@drawable/happy_trans_164" />
-
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/positiveText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/linearLayout1"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="47dp"
-        android:layout_toRightOf="@+id/linearLayout1"
-        android:text="@string/positive_sign"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/negativeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/linearLayout1"
-        android:layout_alignLeft="@+id/positiveText"
-        android:layout_marginBottom="34dp"
-        android:text="@string/negative_sign"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-            android:id="@+id/neutralText"
-            android:layout_width="wrap_content"
+        <TableLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/positiveText"
-            android:layout_below="@+id/positiveText"
-            android:layout_marginTop="102dp"
-            android:text="@string/neutral_sign"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:layout_marginTop="60dp" 
+            android:layout_marginLeft="20dp">
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/positiveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/positive_sign"
+                    android:src="@drawable/happy_164" />
+
+                <TextView
+                    android:id="@+id/positiveText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginTop="47dp"
+                    android:text="@string/positive_sign"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/neutralText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:text="@string/neutral_sign"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <ImageButton
+                    android:id="@+id/neutralButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/neutral_sign"
+                    android:src="@drawable/happy_164" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/negativeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/negative_sign"
+                    android:src="@drawable/happy_trans_164" />
+
+                <TextView
+                    android:id="@+id/negativeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginTop="47dp"
+                    android:gravity="center"
+                    android:text="@string/negative_sign"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            </TableRow>
+
+        </TableLayout>
+
 
 </RelativeLayout>

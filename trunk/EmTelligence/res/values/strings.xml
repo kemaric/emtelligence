@@ -13,9 +13,9 @@
 	<string name="because">because&#8230;</string>
 	<string name="optionalForm">This affected me because&#8230;</string>
 	
-	<string name="positive_sign">(+1)</string>
-	<string name="negative_sign">(-1)</string>
-	<string name="neutral_sign">(0)</string>
+	<string name="positive_sign">positive</string>
+	<string name="negative_sign">negative</string>
+	<string name="neutral_sign">neutral</string>
 	
 	<!-- Positive emotions -->
 	<string name="happy">happy</string>
