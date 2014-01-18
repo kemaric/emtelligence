@@ -42,8 +42,8 @@ public class MainActivity extends Activity {
 		trackB.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				Intent emotionActivity = new Intent(getApplicationContext(), TrackingActivity.class);
-				startActivity(emotionActivity);
+				Intent trackingActivity = new Intent(getApplicationContext(), TrackingActivity.class);
+				startActivity(trackingActivity);
 			}
 		});
 	}
