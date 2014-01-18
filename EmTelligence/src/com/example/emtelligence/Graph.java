@@ -59,10 +59,8 @@ public class Graph extends Activity {
         // draw sin curve
         int num = 150;
         GraphViewData[] data = new GraphViewData[num];
-        double v=0;
         for (int i=0; i<num; i++) {
-                v += 0.2;
-                data[i] = new GraphViewData(i, Math.sin(v));
+                data[i] = new GraphViewData(i, i%4 - 2);
         }
         
        // graph with dynamically generated horizontal and vertical labels
