@@ -56,9 +56,13 @@ public class Graph extends Activity {
         GraphViewData[] data = (GraphViewData[]) dataList.toArray();
 */
         //For testing
-        GraphViewData[] data = new GraphViewData[40];
-        for(int i = 0; i<40; i++){
-        	data[i] = new GraphViewData(i, i%4 - 2);
+        // draw sin curve
+        int num = 150;
+        GraphViewData[] data = new GraphViewData[num];
+        double v=0;
+        for (int i=0; i<num; i++) {
+                v += 0.2;
+                data[i] = new GraphViewData(i, Math.sin(v));
         }
         
        // graph with dynamically generated horizontal and vertical labels

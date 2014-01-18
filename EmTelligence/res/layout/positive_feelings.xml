@@ -22,13 +22,14 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:stretchColumns="1"
         android:layout_marginTop="20dp" >
 
         <TableRow
             android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp" 
             android:layout_height="wrap_content" >
 
             <Button
@@ -65,18 +66,19 @@
 
         <TableRow
             android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp" 
+
             android:layout_height="wrap_content" >
 
              <Button
-                android:id="@+id/buttonAttractive"
-               	android:drawableTop="@drawable/attractive"
-               	android:background="@android:color/transparent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="30dip"
-                android:textSize="12sp"
-                android:text="@string/attractive" />
+                 android:id="@+id/buttonAttractive"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:background="@android:color/transparent"
+                 android:drawableTop="@drawable/attractive"
+                 android:text="@string/attractive"
+                 android:textSize="12sp"
+                 android:width="30dip" />
 
             <Button
                 android:id="@+id/buttonFocused"
