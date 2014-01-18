@@ -18,57 +18,58 @@ public class Graph extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.graph); //Not sure what to put here
-        
+        GraphViewData[] data;
         /*
          * Get the Journal Entries from
          */
-/*
- * For testing purposes  
+        
         ArrayList<JournalEntry> JournalList = new ArrayList<JournalEntry>();
         JournalEntry entry = null, nextEntry = null;
 
-        
-        ArrayList<String> dates = new ArrayList<String>();
-        String date = "", tempDate = "";
-        
-        int num = JournalList.size(); //Make number of entries
-        ArrayList<GraphViewData> dataList = new ArrayList<GraphViewData>();
-        int sum = 0, index = 0;
-        for (int day=0; index<num; day++) { //Loop through all dates
-        	entry = JournalList.get(index);
-        	sum = entry.getScore();
-        	date = entry.getEntryDate().toString();
-        	date = date.substring(4, 11) + date.substring(24);
-        	dates.add(date);
-        	tempDate = date;
-            while(tempDate.equals(date) && index < num){
-            	index += 1;
-            	entry = JournalList.get(index);
-            	tempDate = entry.getEntryDate().toString();
-            	tempDate = date.substring(4, 11) + date.substring(24);
-            	if(tempDate.equals(date)){
-            		sum += entry.getScore();
-            	}
-            }
-            dataList.add(new GraphViewData(day, sum));
+        if(JournalList.size() != 0){
+	        ArrayList<String> dates = new ArrayList<String>();
+	        String date = "", tempDate = "";
+	        
+	        int num = JournalList.size(); //Make number of entries
+	        ArrayList<GraphViewData> dataList = new ArrayList<GraphViewData>();
+	        int sum = 0, index = 0;
+	        for (int day=0; index<num; day++) { //Loop through all dates
+	        	entry = JournalList.get(index);
+	        	sum = entry.getEmotion().getEv().getValue();
+	        	date = "" + entry.getEntryDate().getMonth() + "/" + entry.getEntryDate().getDate() +
+	        			"/" + entry.getEntryDate().getYear();
+	        	date = date.substring(4, 11) + date.substring(24);
+	        	dates.add(date);
+	        	tempDate = date;
+	            while(tempDate.equals(date) && index < num){
+	            	index += 1;
+	            	entry = JournalList.get(index);
+	            	tempDate = "" + entry.getEntryDate().getMonth() + "/" + entry.getEntryDate().getDate() +
+	            			"/" + entry.getEntryDate().getYear();
+	            	if(tempDate.equals(date)){
+	            		sum += entry.getEmotion().getEv().getValue();
+	            	}
+	            }
+	            dataList.add(new GraphViewData(day, sum));
+	        }
+	        
+	        data = (GraphViewData[]) dataList.toArray();
         }
-
-        GraphViewData[] data = (GraphViewData[]) dataList.toArray();
-*/
-        //For testing
-        // draw sin curve
-        int num = 150;
-        GraphViewData[] data = new GraphViewData[num];
-        for (int i=0; i<num; i++) {
-                data[i] = new GraphViewData(i, i%4);
+        else{
+	        //For testing
+	        int num = 150;
+	        data = new GraphViewData[num];
+	        for (int i=0; i<num; i++) {
+	                data[i] = new GraphViewData(i, i%4);
+	        }
         }
-        
        // graph with dynamically generated horizontal and vertical labels
-        GraphView graphView;
-        graphView = new LineGraphView(
-            this
-            , "GraphViewDemo"
-        );
+        LineGraphView graphView = new LineGraphView(
+    	      this // context
+    	      , "Emotional History" // heaidng
+    	);
+        graphView.setDrawDataPoints(true);
+        graphView.setDataPointsRadius(15f);
          
         // add data
         graphView.addSeries(new GraphViewSeries(data));
