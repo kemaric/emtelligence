@@ -22,7 +22,7 @@ public class Graph extends Activity {
         /*
          * Get the Journal Entries from
          */
-        ArrayList<JournalEntry> JournalList;
+        ArrayList<JournalEntry> JournalList = new ArrayList();
         JournalEntry entry = null;
         
         ArrayList<String> dates;
