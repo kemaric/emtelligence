@@ -36,12 +36,24 @@
 	        android:src="@drawable/happy_164" android:contentDescription="@string/positive_sign"/>
     	
     	<ImageButton
-	        android:id="@+id/negativeButton"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_marginTop="33dp"
-	        android:background="@color/trans"
-	        android:src="@drawable/happy_trans_164" android:contentDescription="@string/negative_sign"/>
+    	    android:id="@+id/neutralButton"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_marginTop="10dp"
+    	    android:background="@color/trans"
+    	    android:contentDescription="@string/neutral_sign"
+    	    android:src="@drawable/happy_164" />
+    
+    	<ImageButton
+    	    android:id="@+id/negativeButton"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_marginTop="10dp"
+    	    android:background="@color/trans"
+    	    android:contentDescription="@string/negative_sign"
+    	    android:src="@drawable/happy_trans_164" />
+
+
     </LinearLayout>
 
     <TextView
@@ -64,5 +76,15 @@
         android:layout_marginBottom="34dp"
         android:text="@string/negative_sign"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+            android:id="@+id/neutralText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/positiveText"
+            android:layout_below="@+id/positiveText"
+            android:layout_marginTop="102dp"
+            android:text="@string/neutral_sign"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
