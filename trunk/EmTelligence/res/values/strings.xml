@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">EmTelligence</string>
+    <string name="record">Record</string>
+    <string name="track">Track</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="i_feel...">I feel&#8230;</string>
@@ -15,5 +17,8 @@
 	<string name="negative_sign">(-1)</string>
 	<string name="neutral_sign">(0)</string>
 	
+	<!-- Positive emotions -->
+	<string name="happy">happy</string>
+	<string name="attractive">attractive</string>
 	
 </resources>

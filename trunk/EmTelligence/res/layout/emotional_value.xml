@@ -32,7 +32,7 @@
 	        android:id="@+id/positiveButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:background="@color/trans"
+	        android:background="@android:color/transparent"
 	        android:src="@drawable/happy_164" android:contentDescription="@string/positive_sign"/>
     	
     	<ImageButton
@@ -40,7 +40,7 @@
     	    android:layout_width="wrap_content"
     	    android:layout_height="wrap_content"
     	    android:layout_marginTop="10dp"
-    	    android:background="@color/trans"
+    	    android:background="@android:color/transparent"               	
     	    android:contentDescription="@string/neutral_sign"
     	    android:src="@drawable/happy_164" />
     
@@ -49,7 +49,7 @@
     	    android:layout_width="wrap_content"
     	    android:layout_height="wrap_content"
     	    android:layout_marginTop="10dp"
-    	    android:background="@color/trans"
+    	    android:background="@android:color/transparent"
     	    android:contentDescription="@string/negative_sign"
     	    android:src="@drawable/happy_trans_164" />
 
