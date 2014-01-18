@@ -36,40 +36,24 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content" >
 
-            <Button
+            <ToggleButton
                 android:id="@+id/buttonHappy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/happy_hov"
-                android:onClick="clickEmoticon" 
-                android:paddingBottom="15dp"
-                android:text="@string/happy"
-                android:textSize="12sp"
-                android:width="30dip" />
+                android:textOff="@string/happy"
+                android:textOn="@string/happy" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/buttonConfident"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/confident_hov"
-                android:paddingBottom="15dp"
-                android:text="@string/confident"
-                android:textSize="12sp"
-                android:width="30dip" />
-
-<!--             <Button
-                android:id="@+id/buttonActive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/active3"
-                android:paddingBottom="15dp"
-                android:text="@string/active"
-                android:textSize="12sp"
-                android:width="30dip" /> -->
-
+                android:textOff="@string/confident"
+                android:textOn="@string/confident" />
+            
             <ToggleButton
                 android:id="@+id/buttonActive"
                 android:layout_width="wrap_content"
@@ -85,67 +69,67 @@
             android:id="@+id/tableRow2"
             android:layout_width="0dp"
             android:layout_height="wrap_content" >
-
-             <Button
+            
+            <ToggleButton
                 android:id="@+id/buttonAttractive"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/attractive_hov"
-                android:paddingBottom="15dp"
-                android:text="@string/attractive"
-                android:textSize="12sp"
-                android:width="30dip" /> 
+                android:textOff="@string/attractive"
+                android:textOn="@string/attractive" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/buttonFocused"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/focused_hov"
-                android:paddingBottom="15dp"
-                android:text="@string/focused"
-                android:textSize="12sp"
-                android:width="30dip" />
-
-            <Button
+                android:textOff="@string/focused"
+                android:textOn="@string/focused" />
+            
+            <ToggleButton
                 android:id="@+id/buttonCalm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/calm_hov"
-                android:paddingBottom="15dp"
-                android:text="@string/calm"
-                android:textSize="12sp"
-                android:width="30dip" />
+                android:textOff="@string/calm"
+                android:textOn="@string/calm" />
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
-            <Button
+            
+            <ToggleButton
                 android:id="@+id/buttonFunny"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/funny_hov"
-                android:paddingBottom="15dp"
-                android:text="@string/funny"
-                android:textSize="12sp"
-                android:width="30dip" />
+                android:textOff="@string/funny"
+                android:textOn="@string/funny" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/buttonSurprised"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/surprised_hov"
-                android:paddingBottom="15dp"
-                android:text="@string/surprised"
-                android:textSize="12sp"
-                android:width="30dip" />
+                android:textOff="@string/surprised"
+                android:textOn="@string/surprised" />
+            
+            <ToggleButton
+                android:id="@+id/buttonOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/calm_hov"
+                android:textOff="@string/calm"
+                android:textOn="@string/calm" />
+
 
 
         </TableRow>
