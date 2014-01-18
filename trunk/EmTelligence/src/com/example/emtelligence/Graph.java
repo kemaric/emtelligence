@@ -60,7 +60,7 @@ public class Graph extends Activity {
         int num = 150;
         GraphViewData[] data = new GraphViewData[num];
         for (int i=0; i<num; i++) {
-                data[i] = new GraphViewData(i, i%4 - 2);
+                data[i] = new GraphViewData(i, i%4);
         }
         
        // graph with dynamically generated horizontal and vertical labels
