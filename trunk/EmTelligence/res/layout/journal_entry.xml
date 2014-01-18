@@ -27,36 +27,30 @@
         android:layout_toRightOf="@+id/textView1"
         android:ems="10" android:inputType="text"/>
 
-    <TextView
-        android:id="@+id/TextView01"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="18dp"
-        android:text="@string/because"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView01"
-        android:layout_alignRight="@+id/editText1"
-        android:layout_below="@+id/TextView01"
-        android:layout_marginTop="176dp"
         android:orientation="vertical" >
-	  <EditText
-	        android:id="@+id/editText2"
-	        android:layout_width="wrap_content"
-	        android:layout_height="fill_parent"
-	        android:layout_marginTop="24dp"
-	        android:ems="10"
-	        android:inputType="textMultiLine" >
-	
-	        <requestFocus />
-	    </EditText>
-    </LinearLayout>
 
-  
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/because"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:ems="10"
+            android:inputType="textMultiLine" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
 
 </RelativeLayout>
