@@ -55,6 +55,14 @@ public class JournalEntry {
 		this.entryDate = entryDate;
 	}
 
+	public Emotion getEmotion() {
+		return emotion;
+	}
+
+	public void setEmotion(Emotion emotion) {
+		this.emotion = emotion;
+	}
+
 	@Override
 	public String toString() {
 		return "JournalEntry [entryId=" + entryId + ", description="
