@@ -20,5 +20,21 @@
 	<!-- Positive emotions -->
 	<string name="happy">happy</string>
 	<string name="attractive">attractive</string>
+	<string name="confident">confident</string>
+	<string name="active">active</string>
+	<string name="focused">focused</string>
+	<string name="calm">calm</string>
+	
+	<!-- Neutral emotions -->
+	<string name="indifferent">indifferent</string>
+	<string name="bored">bored</string>
+	<string name="confused">confused</string>
+		
+	<!-- Negative emotions -->
+	<string name="sad">sad</string>
+	<string name="anxious">anxious</string>
+	<string name="angry">angry</string>	
+	<string name="jealous">jealous</string>	
+	
 	
 </resources>
