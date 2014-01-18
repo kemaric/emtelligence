@@ -4,23 +4,28 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
 
 	//Context context;
-	private ImageButton recordB, trackB;
+	private Button recordB, trackB;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/LHANDW.ttf");
 		setContentView(R.layout.activity_main);
-		//context = this;
+
+		//context = this;		
+		recordB = (Button)findViewById(R.id.recordButton);
+		trackB = (Button)findViewById(R.id.trackButton);
+
 		
-		recordB = (ImageButton)findViewById(R.id.recordButton);
-		trackB = (ImageButton)findViewById(R.id.trackButton);
+		recordB.setTypeface(mFont);
+		trackB.setTypeface(mFont);
 		
 		/*function for record button action to make journal entry*/
 		recordB.setOnClickListener(new View.OnClickListener() {
