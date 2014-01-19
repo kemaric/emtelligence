@@ -10,7 +10,7 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/pageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -18,13 +18,14 @@
         android:layout_marginLeft="17dp"
         android:layout_marginTop="20dp"
         android:text="@string/i_feel..."
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textSize="32sp" />
 
         <TableLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp" 
-            android:layout_marginLeft="20dp">
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="70dp" >
 
             <TableRow
                 android:id="@+id/tableRow1"
