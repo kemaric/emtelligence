@@ -18,14 +18,15 @@
         android:layout_marginLeft="17dp"
         android:layout_marginTop="20dp"
         android:text="@string/i_feel..."
+        android:textColor="@color/green"
         android:textSize="32sp" />
 
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="70dp" >
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="80dp" >
 
             <TableRow
                 android:id="@+id/tableRow1"
@@ -38,16 +39,17 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/positive_sign"
-                    android:src="@drawable/happy_164" />
+                    android:src="@drawable/pos_value" />
 
                 <TextView
                     android:id="@+id/positiveText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_marginLeft="21dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="47dp"
                     android:text="@string/positive_sign"
+                    android:textColor="@color/green"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
             </TableRow>
@@ -62,8 +64,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
+                    android:layout_marginLeft="-15dp"
                     android:gravity="center"
                     android:text="@string/neutral_sign"
+                    android:textColor="@color/green"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <ImageButton
@@ -72,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/neutral_sign"
-                    android:src="@drawable/neutral_164" />
+                    android:src="@drawable/neut_value" />
 
             </TableRow>
 
@@ -88,16 +92,17 @@
                     android:layout_marginTop="10dp"
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/negative_sign"
-                    android:src="@drawable/negative_164" />
+                    android:src="@drawable/neg_value" />
 
                 <TextView
                     android:id="@+id/negativeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="21dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="47dp"
                     android:gravity="center"
                     android:text="@string/negative_sign"
+                    android:textColor="@color/green"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
             </TableRow>
