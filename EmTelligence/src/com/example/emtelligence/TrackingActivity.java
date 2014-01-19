@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class TrackingActivity extends Activity{
 
-	private Button journalB, reportB;
+	private Button journalB, reportB, settingsB;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -19,6 +19,7 @@ public class TrackingActivity extends Activity{
 		
 		journalB = (Button)findViewById(R.id.journalButton);
 		reportB = (Button)findViewById(R.id.progressButton);
+		settingsB = (Button)findViewById(R.id.settingsButton);
 		
 		TextView txt1 = (TextView)findViewById(R.id.seeText);   
 		Typeface mFont = Typeface.createFromAsset(getAssets(), "Lucida Handwriting.ttf");		
@@ -39,6 +40,14 @@ public class TrackingActivity extends Activity{
 			public void onClick(View v) {
 				Intent graphActivity = new Intent(TrackingActivity.this,Graph.class);
 				startActivity(graphActivity);
+			}
+		});
+		
+		settingsB.setOnClickListener(new View.OnClickListener() {		
+			@Override
+			public void onClick(View v) {
+				Intent settingsActivity = new Intent(TrackingActivity.this,SettingsActivity.class);
+				startActivity(settingsActivity);
 			}
 		});
 	}
