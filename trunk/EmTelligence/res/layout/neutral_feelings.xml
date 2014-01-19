@@ -73,7 +73,7 @@
                 android:id="@+id/tableRow2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" >
-
+<!-- 
                 <ToggleButton
                     android:id="@+id/buttonConfident"
                     android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
                     android:textOff="@string/confident"
                     android:textOn="@string/confident" />
 
-               
+                -->
             </TableRow>
         </TableLayout>
         
