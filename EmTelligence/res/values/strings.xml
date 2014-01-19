@@ -55,6 +55,9 @@
 	<string name="entry_description">description</string>
 	<string name="entry_date">date</string>
 	<string name="entry_score">score</string>
-	<string name="entry_id">entryId</string>	
+	<string name="entry_id">entryId</string>
+	<string name="switch_graph">Switch graph view</string>
+	<string name="graph1_explanation">This graph shows your emotianal value for each day.</string>
+	<string name="graph2_explanation">This graph shows your cumulative emotional value to date.</string>	
 
 </resources>
