@@ -2,14 +2,13 @@ package com.example.emtelligence;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -18,7 +17,6 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/LHANDW.ttf");
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main);
@@ -26,10 +24,13 @@ public class MainActivity extends Activity {
 		//context = this;		
 		recordB = (Button)findViewById(R.id.recordButton);
 		trackB = (Button)findViewById(R.id.trackButton);
-
 		
-		//recordB.setTypeface(mFont);
-		//trackB.setTypeface(mFont);
+		TextView txt1 = (TextView)findViewById(R.id.title1);  
+		TextView txt2 = (TextView)findViewById(R.id.title2);  
+
+		Typeface mFont = Typeface.createFromAsset(getAssets(), "Lucida Handwriting.ttf");		
+		txt1.setTypeface(mFont);
+		txt2.setTypeface(mFont);
 		
 		/*function for record button action to make journal entry*/
 		recordB.setOnClickListener(new View.OnClickListener() {

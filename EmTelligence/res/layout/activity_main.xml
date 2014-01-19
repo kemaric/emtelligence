@@ -2,45 +2,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/bg"
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/title1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="28dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="26dp"
         android:text="@string/em"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/green"
-        android:textColorLink="@color/green" />
+        android:textSize="32sp" 
+        android:textColor="@color/green" />
 
     <TextView
-        android:id="@+id/TextView01"
+        android:id="@+id/title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_alignBaseline="@+id/title1"
+        android:layout_alignBottom="@+id/title1"
+        android:layout_toRightOf="@+id/title1"
         android:text="@string/telligence"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/lightGreen"
-        android:textColorLink="@color/green" />
+        android:textSize="32sp" 
+        android:textColor="@color/lightGreen" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp" >
+        android:layout_below="@+id/title1"
+        android:layout_centerHorizontal="true">
 
         <Button               
             android:id="@+id/recordButton"
