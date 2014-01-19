@@ -2,6 +2,7 @@ package com.example.emtelligence;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -9,6 +10,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+//import android.database.sqlite
 import android.database.sqlite.SQLiteOpenHelper;
 public class JournalActivity extends Activity{
 	EditText feeling, description;
@@ -16,6 +20,7 @@ public class JournalActivity extends Activity{
 	Spinner scoreBox;
 	Button submitB;
 	JournalEntry jEntry;
+	MySQLiteHelper sqlhelper;
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
@@ -49,9 +54,16 @@ public class JournalActivity extends Activity{
 				JournalEntry jEntry = new JournalEntry(new Emotion(Emotion.EmotionalValue.valueOf(Integer.parseInt(array_spinner[4])),feeling.toString()) {
 				}, description.toString());
 				
-			//	MySQLiteHelper sqlhelper = 
-				//MySQLiteHelper sqlhelper = MySQLiteOpenHelper()
-
+				 sqlhelper = new MySQLiteHelper(getApplicationContext());
+			        SQLiteDatabase db = sqlhelper.getWritableDatabase();
+			        Cursor c = db.rawQuery("SELECT  * FROM " + "entires", null);
+			        if(c.equals(null))
+			            Log.d("Feteching: ", "Database not there"); 
+			        else{
+			        	sqlhelper.addJournalEntry(jEntry);
+			        	db.rawQuery("SELECT  * FROM " + "entires", null);
+			        }
+			        
 			}
 		});
 	}
