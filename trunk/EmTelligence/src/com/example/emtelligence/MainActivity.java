@@ -25,12 +25,14 @@ public class MainActivity extends Activity {
 		recordB = (Button)findViewById(R.id.recordButton);
 		trackB = (Button)findViewById(R.id.trackButton);
 		
+		
 		TextView txt1 = (TextView)findViewById(R.id.title1);  
-		TextView txt2 = (TextView)findViewById(R.id.title2);  
-
+		TextView txt2 = (TextView)findViewById(R.id.title2); 
+		
 		Typeface mFont = Typeface.createFromAsset(getAssets(), "Lucida Handwriting.ttf");		
 		txt1.setTypeface(mFont);
 		txt2.setTypeface(mFont);
+
 		
 		/*function for record button action to make journal entry*/
 		recordB.setOnClickListener(new View.OnClickListener() {
