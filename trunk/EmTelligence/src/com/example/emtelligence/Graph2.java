@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.Button;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -29,7 +30,6 @@ public class Graph2 extends Activity {
         /*
          * Get the Journal Entries from
          */
-        
         ArrayList<JournalEntry> JournalList = new ArrayList<JournalEntry>();
         JournalEntry entry = null;
         ArrayList<String> dates = new ArrayList<String>();

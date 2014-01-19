@@ -21,7 +21,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "JournalDB";
 
 	 // Books table name
-    private static final String TABLE_JOURNAL_ENTRIES = "journal_entries";
+    private static final String TABLE_JOURNAL_ENTRIES = "entries";
 	
     private static final String ENTRYID = "entryID";
 	private static final String DATE_TIME = "date/time";
@@ -39,7 +39,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		// SQL statement to create book table
 		String CREATE_JOURNAL_TABLE = "CREATE TABLE entries ( " +
 				"id INTEGER PRIMARY KEY AUTOINCREMENT, " + 
-				"date/time TEXT, "+
+				"date TEXT, "+
 				"feeling TEXT, " + "description TEXT" +
 						"score INTEGER)";
 

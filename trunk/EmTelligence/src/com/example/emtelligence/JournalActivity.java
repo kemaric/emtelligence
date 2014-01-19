@@ -34,13 +34,13 @@ public class JournalActivity extends Activity{
 		scoreBox = (Spinner)findViewById(R.id.spinner1);
 		description = (EditText)findViewById(R.id.feelingExplanation);
 		array_spinner=new String[7];
-        array_spinner[0]="-3";
-        array_spinner[1]="-2";
-        array_spinner[2]="-1";
-        array_spinner[3]="0";
-        array_spinner[4]="1";
-        array_spinner[5]="2";
-        array_spinner[6]="3";
+        array_spinner[0]= Emotion.EmotionalValue.VERY_NEGATIVE.toString();
+        array_spinner[1]=Emotion.EmotionalValue.MODERATELY_NEGATIVE.toString();
+        array_spinner[2]=Emotion.EmotionalValue.SOMEWHAT_NEGATIVE.toString();
+        array_spinner[3]=Emotion.EmotionalValue.NEUTRAL.toString();
+        array_spinner[4]=Emotion.EmotionalValue.SOMEWHAT_POSITIVE.toString();
+        array_spinner[5]=Emotion.EmotionalValue.MODERATELY_POSITIVE.toString();
+        array_spinner[6]=Emotion.EmotionalValue.VERY_POSITIVE.toString();
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,
         		array_spinner);
 		submitB = (Button)findViewById(R.id.submitB);
