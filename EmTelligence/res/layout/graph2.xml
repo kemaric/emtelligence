@@ -11,7 +11,7 @@
            >
 		
 	           <LinearLayout
-	               android:id="@+id/graph1"
+	               android:id="@+id/graph2"
 	               android:layout_width="match_parent"
 	               android:layout_height="300dp"
 	               android:orientation="horizontal"
@@ -29,12 +29,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="20dp"
+        android:text="@string/graph2_explanation"
         android:paddingRight="20dp"
-        android:text="@string/graph1_explanation"
         android:textSize="16sp" />
 	    	           
 	    <Button
-            android:id="@+id/switchGraphButton1"
+            android:id="@+id/switchGraphButton2"
             android:layout_width="match_parent"
            	android:layout_height="70dp"
             android:text="@string/switch_graph"
