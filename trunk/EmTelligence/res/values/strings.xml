@@ -19,7 +19,10 @@
 	<string name="see">What would you like to see?</string>
 	<string name="journal">Journal</string>
     <string name="progress_plot">Progress plot</string>
+    <string name="settings_txt">Set Notifications</string>
 	
+    <string name="reminder_txt">Add email to receive daily reminder</string>
+    
 	<string name="positive_sign">positive</string>
 	<string name="negative_sign">negative</string>
 	<string name="neutral_sign">neutral</string>
@@ -58,7 +61,7 @@
 	<string name="entry_score">score</string>
 	<string name="entry_id">entryId</string>
 	<string name="switch_graph">Switch graph view</string>
-	<string name="graph1_explanation">This graph shows your emotianal value for each day.</string>
-	<string name="graph2_explanation">This graph shows your cumulative emotional value to date.</string>	
+	<string name="graph1_explanation">This plot shows your emotional gains and losses for each day.</string>
+	<string name="graph2_explanation">This plot shows your cumulative emotional score to date.</string>	
 
 </resources>
