@@ -74,7 +74,7 @@ public class EmotionActivity extends Activity{
 				.onGenericMotionEvent(event)
 			}
 		*/
-	Button submitButton = (Button)findViewById(R.id.button1);
+	Button submitButton = (Button)findViewById(R.id.buttonSubPos);
 	submitButton.setOnClickListener(new View.OnClickListener() {
 		
 		@Override
