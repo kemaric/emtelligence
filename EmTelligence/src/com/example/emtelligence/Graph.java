@@ -1,15 +1,20 @@
 package com.example.emtelligence;
 
 import android.app.Activity;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.Button;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
 
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import com.jjoe64.graphview.BarGraphView;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphView.GraphViewData;
@@ -28,12 +33,22 @@ public class Graph extends Activity {
         /*
          * Get the Journal Entries from
          */
-        
+        MySQLiteHelper sqlhelper = new MySQLiteHelper(this);
+        SQLiteDatabase db = sqlhelper.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT  * FROM " + "entries", null);
+        if(c.equals(null))
+        	//db.
+      //  c.moveToFirst();
+       // c.getString(c.getColumnIndexOrThrow(columnName));
+       // db.u
+        Log.d("Feteching: ", "Fetching Data .."); 
         ArrayList<JournalEntry> JournalList = new ArrayList<JournalEntry>();
         JournalEntry entry = null;
         ArrayList<String> dates = new ArrayList<String>();
         String date = "", tempDate = "";
-
+        
+        JournalList = (ArrayList<JournalEntry>) sqlhelper.getAllJournalEntries();
+        
         if(JournalList.size() != 0){
 	        
 	        num = JournalList.size(); //Make number of entries

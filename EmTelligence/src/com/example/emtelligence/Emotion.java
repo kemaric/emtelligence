@@ -2,8 +2,8 @@ package com.example.emtelligence;
 
 public class Emotion {
 	public enum EmotionalValue {
-		EXTREMELY_NEGATIVE(-3),VERY_NEGATIVE(-2),SOMEWHAT_NEGATIVE(-1),
-		NEUTRAL(0),SOMEWHAT_POSITIVE(1),VERY_POSITIVE(2),EXTREMELY_POSITIVE(3);
+		VERY_NEGATIVE(-3),MODERATELY_NEGATIVE(-2),SOMEWHAT_NEGATIVE(-1),
+		NEUTRAL(0),SOMEWHAT_POSITIVE(1),MODERATELY_POSITIVE(2),VERY_POSITIVE(3);
 		private final int id;
 		private EmotionalValue(int id){this.id = id;}
 		public int getValue(){return id;}

@@ -22,11 +22,11 @@ public class JournalTable extends Activity {
 		setContentView(R.layout.journal_table);
 
 		JournalEntry a = new JournalEntry(1,"I just had sex",
-				new Date(), new Emotion(Emotion.EmotionalValue.EXTREMELY_POSITIVE, "happy as shit!"));
+				new Date(), new Emotion(Emotion.EmotionalValue.VERY_POSITIVE, "happy as shit!"));
 		JournalEntry b = new JournalEntry(2,"I punched a tree when my dad yelled at me",
-				new Date(), new Emotion(Emotion.EmotionalValue.EXTREMELY_NEGATIVE, "angry as shit!"));
+				new Date(), new Emotion(Emotion.EmotionalValue.VERY_NEGATIVE, "angry as shit!"));
 		JournalEntry c = new JournalEntry(3,"I just failed my test",
-				new Date(), new Emotion(Emotion.EmotionalValue.VERY_NEGATIVE, "dissapointed"));
+				new Date(), new Emotion(Emotion.EmotionalValue.MODERATELY_NEGATIVE, "dissapointed"));
 		JournalEntry d = new JournalEntry(4,"I just had free cookie",
 				new Date(), new Emotion(Emotion.EmotionalValue.SOMEWHAT_POSITIVE, "happy"));
 
