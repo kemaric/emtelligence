@@ -60,7 +60,7 @@
                     android:textOn="@string/anxious" />
 
                 <ToggleButton
-                    android:id="@+id/buttonConfused"
+                    android:id="@+id/buttonConfused2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -117,7 +117,7 @@
                     android:textOn="@string/happy" /> -->
 
                 <ToggleButton
-                    android:id="@+id/buttonSurprised"
+                    android:id="@+id/buttonSurprised2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"

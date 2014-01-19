@@ -51,13 +51,11 @@ public class EmotionActivity extends Activity{
 				
 				final ArrayList<ToggleButton> buttonList = new ArrayList<ToggleButton>();
 				//Adding buttons to the list to pass on
-				ToggleButton tmpButton = (ToggleButton)findViewById(R.id.buttonActive);
-				buttonList.add(tmpButton);
-				tmpButton = (ToggleButton)findViewById(R.id.buttonAngry);
+				ToggleButton tmpButton = (ToggleButton)findViewById(R.id.buttonAngry);
 				buttonList.add(tmpButton);
 				tmpButton = (ToggleButton)findViewById(R.id.buttonAnxious);
 				buttonList.add(tmpButton);
-				tmpButton = (ToggleButton)findViewById(R.id.buttonConfused);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonConfused2);
 				buttonList.add(tmpButton);
 				tmpButton = (ToggleButton)findViewById(R.id.buttonEnvious);
 				buttonList.add(tmpButton);
@@ -65,7 +63,7 @@ public class EmotionActivity extends Activity{
 				buttonList.add(tmpButton);
 				tmpButton = (ToggleButton)findViewById(R.id.buttonSad);
 				buttonList.add(tmpButton);
-				tmpButton = (ToggleButton)findViewById(R.id.buttonSurprised);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonSurprised2);
 				buttonList.add(tmpButton);
 				tmpButton = (ToggleButton)findViewById(R.id.buttonTired);
 				buttonList.add(tmpButton);
@@ -182,9 +180,7 @@ public class EmotionActivity extends Activity{
 				setContentView(R.layout.neutral_feelings);
 				final ArrayList<ToggleButton> buttonList = new ArrayList<ToggleButton>();
 				//Adding buttons to the list to pass on
-				ToggleButton tmpButton = (ToggleButton)findViewById(R.id.buttonActive);
-				buttonList.add(tmpButton);
-				tmpButton = (ToggleButton)findViewById(R.id.buttonBored);
+				ToggleButton tmpButton = (ToggleButton)findViewById(R.id.buttonBored);
 				buttonList.add(tmpButton);
 				tmpButton = (ToggleButton)findViewById(R.id.buttonConfused);
 				buttonList.add(tmpButton);
