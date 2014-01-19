@@ -12,6 +12,8 @@ import android.util.Log;
 import android.content.ContentValues;
 import android.content.Context;
 
+//private final Context outcontext;
+
 public class MySQLiteHelper extends SQLiteOpenHelper {
 	// Database Version
 	private static final int DATABASE_VERSION = 1;
@@ -65,7 +67,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		values.put(DATE_TIME,entry.getEntryDate().toString());  
 		values.put(EMOTION, entry.getEmotion().getFeeling()); 
 		values.put(DESCRIPTION, entry.getDescription()); 
-		values.put(SCORE, String.valueOf(entry.getEmotion().getEv().getValue())); 
+		values.put(SCORE, String.valueOf(entry.getEmotion().getEv())); 
 		// 3. insert
 		db.insert(TABLE_JOURNAL_ENTRIES, // table
 				null, //nullColumnHack
@@ -100,7 +102,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	    jEntry.setEntryDate(Date.valueOf(cursor.getString(1)));
 	    jEntry.setEmotion(new Emotion(Emotion.EmotionalValue.valueOf(Integer.parseInt(cursor.getString(4))),cursor.getString(2)));
 	    jEntry.setDescription(cursor.getString(3));
-	    jEntry.setScore(Integer.parseInt(cursor.getString(4)));
+	    //jEntry.setScore(Integer.parseInt(cursor.getString(4)));
 	 
 	    //log 
 	Log.d("getJournalEntry("+id+")", jEntry.toString());
@@ -138,7 +140,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	    values.put(DATE_TIME,jEntry.getEntryDate().toString());  
 		values.put(EMOTION, jEntry.getEmotion().getFeeling()); 
 		values.put(DESCRIPTION, jEntry.getDescription()); 
-		values.put(SCORE, String.valueOf(jEntry.getEmotion().getEv().getValue())); 
+		values.put(SCORE, String.valueOf(jEntry.getEmotion().getEv())); 
 	    
 	    // 3. updating row
 	    int i = db.update(TABLE_JOURNAL_ENTRIES, //table
@@ -172,7 +174,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		       	    jEntry.setEntryDate(Date.valueOf(cursor.getString(1)));
 		       	    jEntry.setEmotion(new Emotion(Emotion.EmotionalValue.valueOf(Integer.parseInt(cursor.getString(4))),cursor.getString(2)));
 		       	    jEntry.setDescription(cursor.getString(3));
-		       	    jEntry.setScore(Integer.parseInt(cursor.getString(4)));
+		       	    //jEntry.setScore(Integer.parseInt(cursor.getString(4)));
 	 
 	               // Add jEntry to list
 	               jEntryList.add(jEntry);
