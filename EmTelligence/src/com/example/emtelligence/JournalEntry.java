@@ -21,6 +21,12 @@ public class JournalEntry {
 		this.emotion = emotion;
 	}
 	
+	public JournalEntry(Emotion emotion, String description) {
+		super();
+		this.description = description;
+		this.entryDate = new Date();
+		this.emotion = emotion;
+	}
 	
 	/**Basic Constructor that only have a score but no description **/
 	public JournalEntry(Date entrydate){
