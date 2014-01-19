@@ -24,8 +24,7 @@ public class MainActivity extends Activity {
 		//context = this;		
 		recordB = (Button)findViewById(R.id.recordButton);
 		trackB = (Button)findViewById(R.id.trackButton);
-		
-		
+				
 		TextView txt1 = (TextView)findViewById(R.id.title1);  
 		TextView txt2 = (TextView)findViewById(R.id.title2); 
 		

@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-	android:background="@drawable/bg"
     tools:context=".MainActivity" >
 
     <TextView
@@ -20,127 +20,145 @@
         android:text="@string/i_feel..."
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TableLayout
-        android:id="@+id/tableLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:stretchColumns="1" >
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/button1"
+        android:layout_marginTop="30dp" >
 
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" >
-
-            <ToggleButton
-                android:id="@+id/buttonHappy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/happy_hov"
-                android:textOff="@string/happy"
-                android:textOn="@string/happy" />
-
-            <ToggleButton
-                android:id="@+id/buttonConfident"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/confident_hov"
-                android:textOff="@string/confident"
-                android:textOn="@string/confident" />
-            
-            <ToggleButton
-                android:id="@+id/buttonActive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/active_hov"
-                android:textOff="@string/active"
-                android:textOn="@string/active" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" >
-            
-            <ToggleButton
-                android:id="@+id/buttonAttractive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/attractive_hov"
-                android:textOff="@string/attractive"
-                android:textOn="@string/attractive" />
-
-            <ToggleButton
-                android:id="@+id/buttonFocused"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/focused_hov"
-                android:textOff="@string/focused"
-                android:textOn="@string/focused" />
-            
-            <ToggleButton
-                android:id="@+id/buttonCalm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/calm_hov"
-                android:textOff="@string/calm"
-                android:textOn="@string/calm" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow3"
+        <TableLayout
+            android:id="@+id/tableLayout1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            
-            <ToggleButton
-                android:id="@+id/buttonFunny"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:stretchColumns="1" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" >
+
+                <ToggleButton
+                    android:id="@+id/buttonActive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/active_hov"
+                    android:textOff="@string/active"
+                    android:textOn="@string/active" />
+
+                <ToggleButton
+                    android:id="@+id/buttonAttractive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/attractive_hov"
+                    android:textOff="@string/attractive"
+                    android:textOn="@string/attractive" />
+
+                <ToggleButton
+                    android:id="@+id/buttonCalm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/calm_hov"
+                    android:textOff="@string/calm"
+                    android:textOn="@string/calm" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" >
+
+                <ToggleButton
+                    android:id="@+id/buttonConfident"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/confident_hov"
+                    android:textOff="@string/confident"
+                    android:textOn="@string/confident" />
+
+                <ToggleButton
+                    android:id="@+id/buttonFocused"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/focused_hov"
+                    android:textOff="@string/focused"
+                    android:textOn="@string/focused" />
+
+                <ToggleButton
+                    android:id="@+id/buttonFunny"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/funny_hov"
+                    android:textOff="@string/funny"
+                    android:textOn="@string/funny" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/funny_hov"
-                android:textOff="@string/funny"
-                android:textOn="@string/funny" />
+                android:layout_height="wrap_content" >
 
-            <ToggleButton
-                android:id="@+id/buttonSurprised"
+                <ToggleButton
+                    android:id="@+id/buttonHappy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/happy_hov"
+                    android:textOff="@string/happy"
+                    android:textOn="@string/happy" />
+
+                <ToggleButton
+                    android:id="@+id/buttonSurprised"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/surprised_hov"
+                    android:textOff="@string/surprised"
+                    android:textOn="@string/surprised" />
+
+                <ToggleButton
+                    android:id="@+id/buttonIntelligent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/intelligent_hov"
+                    android:textOff="@string/intelligent"
+                    android:textOn="@string/intelligent" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/surprised_hov"
-                android:textOff="@string/surprised"
-                android:textOn="@string/surprised" />
-            
-            <ToggleButton
-                android:id="@+id/buttonOther"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/calm_hov"
-                android:textOff="@string/calm"
-                android:textOn="@string/calm" />
+                android:layout_height="wrap_content" >
 
-
-
-        </TableRow>
-    </TableLayout>
+                <ToggleButton
+                    android:id="@+id/buttonStrong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/strong_hov"
+                    android:textOff="@string/strong"
+                    android:textOn="@string/strong" />
+            </TableRow>
+        </TableLayout>
+        
+	</ScrollView>
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/tableLayout1"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="18dp"
         android:text="@string/submit" />
 
