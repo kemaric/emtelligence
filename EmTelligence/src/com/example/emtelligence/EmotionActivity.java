@@ -47,7 +47,7 @@ public class EmotionActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				setContentView(R.layout.negative_feelings);
-				switcher = (ViewSwitcher) findViewById(R.id.negativeF);
+				//switcher = (ViewSwitcher) findViewById(R.id.negativeF);
 			}
 		});
 		
@@ -57,7 +57,7 @@ public class EmotionActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				setContentView(R.layout.positive_feelings);
-				switcher = (ViewSwitcher) findViewById(R.id.positiveF);
+				//switcher = (ViewSwitcher) findViewById(R.id.positiveF);
 			}
 		});
 		neutralB.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +65,7 @@ public class EmotionActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				setContentView(R.layout.neutral_feelings);
-				switcher = (ViewSwitcher) findViewById(R.id.neutralF);
+				//switcher = (ViewSwitcher) findViewById(R.id.neutralF);
 			}
 		});
 		/*if(switcher != null && (switcher.getId() == R.id.neutralF || 
@@ -74,7 +74,7 @@ public class EmotionActivity extends Activity{
 				.onGenericMotionEvent(event)
 			}
 		*/
-	Button submitButton = (Button)findViewById(R.id.positiveSubmitB);
+	Button submitButton = (Button)findViewById(R.id.button1);
 	submitButton.setOnClickListener(new View.OnClickListener() {
 		
 		@Override
