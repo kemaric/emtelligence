@@ -17,11 +17,12 @@ import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.LineGraphView;
 import com.jjoe64.graphview.CustomLabelFormatter;
 
-public class Graph extends Activity {
+public class Graph2 extends Activity {
 	private Button switchGraph;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.graph);
+        setContentView(R.layout.graph2);
+        
         GraphViewData[] data;
         int num = 0;
         int sum = 0, minSum = 0, maxSum = 0;
@@ -38,12 +39,14 @@ public class Graph extends Activity {
 	        
 	        num = JournalList.size(); //Make number of entries
 	        ArrayList<GraphViewData> dataList = new ArrayList<GraphViewData>();
+	        ArrayList<GraphViewData> dataListTotal = new ArrayList<GraphViewData>();
 	        int index = 0;
 	        for (int day=0; index<num; day++) { //Loop through all dates
 	        	entry = JournalList.get(index);
-	        	sum = entry.getEmotion().getEv().getValue();
+	        	sum += entry.getEmotion().getEv().getValue();
 	        	date = "" + entry.getEntryDate().getMonth() + "/" + entry.getEntryDate().getDate();
 	        	date = date.substring(4, 11) + date.substring(24);
+	      
 	        	dates.add(date);
 	        	tempDate = date;
 	            while(tempDate.equals(date) && index < num){
@@ -60,13 +63,13 @@ public class Graph extends Activity {
 	        }
 	        
 	        data = (GraphViewData[]) dataList.toArray();
-	    }
+        }
         else{
 	        //For testing
 	        num = 150;
 	        data = new GraphViewData[num];
 	        for (int i=0; i<num; i++) {
-	        	sum = (int) (Math.random() * 20.0 - 10.0);
+	        	sum += (int) (Math.random() * 20.0 - 10.0);
 	            minSum = Math.min(sum, minSum);
 	            maxSum = Math.max(sum, maxSum);
 	            data[i] = new GraphViewData(i, sum);
@@ -82,8 +85,8 @@ public class Graph extends Activity {
         if(start < 0) start = 0;
         
         // graph with dynamically generated horizontal and vertical labels
-        /* Graph for sum in single day */ 
-        String heading = "Emotional History";
+        /* Graph for cumulative sum */ 
+        String heading = "Cumulative Emotional History";
         if(JournalList.size() == 0) heading = "Example " + heading;
         LineGraphView graphView = new LineGraphView(
     	      this // context
@@ -116,17 +119,17 @@ public class Graph extends Activity {
         while(vertLabels > 10) vertLabels /= 2;
         graphView.getGraphViewStyle().setNumVerticalLabels(vertLabels + 1);
         
-        
+              
         /* Layout stuffs */
-        switchGraph = (Button)findViewById(R.id.switchGraphButton1);
+        switchGraph = (Button)findViewById(R.id.switchGraphButton2);
         switchGraph.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent graphActivity = new Intent(Graph.this,Graph2.class);
+				Intent graphActivity = new Intent(Graph2.this,Graph.class);
 				startActivity(graphActivity);
 			}
 		});
-        LinearLayout layout = (LinearLayout) findViewById(R.id.graph1);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.graph2);
         layout.addView(graphView);
     }
 }
