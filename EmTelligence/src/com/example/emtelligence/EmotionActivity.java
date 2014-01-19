@@ -75,6 +75,7 @@ public class EmotionActivity extends Activity{
 				        	for (final ToggleButton other : buttonList){
 				        		if (other != b)
 				        			other.setChecked(false);
+			
 				        	}
 				        }
 				    });
@@ -92,13 +93,12 @@ public class EmotionActivity extends Activity{
 						for (final ToggleButton b : buttonList){
 						    if (b.isChecked()){
 						    	// B is the button that was pressed
+						    	Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
+								
+								journalEnrty.putExtra("mybuttons", b.toString().substring(6, b.toString().length()));
+								startActivity(journalEnrty);
 						    }
-						}
-						
-						Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
-						
-						//journalEnrty.putExtra("mybuttons", buttonList.t);
-						startActivity(journalEnrty);
+						}	
 					}
 				});
 				//switcher = (ViewSwitcher) findViewById(R.id.negativeF);
@@ -161,13 +161,13 @@ public class EmotionActivity extends Activity{
 						for (final ToggleButton b : buttonList){
 						    if (b.isChecked()){
 						    	// B is the button that was pressed
+								Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
+								
+								journalEnrty.putExtra("mybuttons", b.toString().substring(6, b.toString().length()));
+								startActivity(journalEnrty);
 						    }
 						}
 						
-						Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
-						
-						//journalEnrty.putExtra("mybuttons", buttonList.t);
-						startActivity(journalEnrty);
 					}
 				});
 				//switcher = (ViewSwitcher) findViewById(R.id.positiveF);
@@ -211,13 +211,12 @@ public class EmotionActivity extends Activity{
 						for (final ToggleButton b : buttonList){
 						    if (b.isChecked()){
 						    	// B is the button that was pressed
+						    	Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
+								
+								journalEnrty.putExtra("mybuttons", b.toString().substring(6, b.toString().length()));
+								startActivity(journalEnrty);
 						    }
 						}
-						
-						Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
-						
-						//journalEnrty.putExtra("mybuttons", buttonList.t);
-						startActivity(journalEnrty);
 					}
 				});
 				//switcher = (ViewSwitcher) findViewById(R.id.neutralF);
