@@ -9,7 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
+import android.database.sqlite.SQLiteOpenHelper;
 public class JournalActivity extends Activity{
 	EditText feeling, description;
 	private String array_spinner[];
@@ -49,6 +49,9 @@ public class JournalActivity extends Activity{
 				JournalEntry jEntry = new JournalEntry(new Emotion(Emotion.EmotionalValue.valueOf(Integer.parseInt(array_spinner[4])),feeling.toString()) {
 				}, description.toString());
 				
+			//	MySQLiteHelper sqlhelper = 
+				//MySQLiteHelper sqlhelper = MySQLiteOpenHelper()
+
 			}
 		});
 	}
