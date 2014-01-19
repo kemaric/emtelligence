@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 import android.widget.ViewFlipper;
 import android.widget.ViewSwitcher;
 
@@ -47,6 +48,7 @@ public class EmotionActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				setContentView(R.layout.negative_feelings);
+				
 				//switcher = (ViewSwitcher) findViewById(R.id.negativeF);
 			}
 		});
@@ -57,6 +59,65 @@ public class EmotionActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				setContentView(R.layout.positive_feelings);
+				
+				final ArrayList<ToggleButton> buttonList = new ArrayList<ToggleButton>();
+				//Adding buttons to the list to pass on
+				ToggleButton tmpButton = (ToggleButton)findViewById(R.id.buttonActive);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonHappy);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonConfident);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonAttractive);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonFocused);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonCalm);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonFunny);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonSurprised);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonIntelligent);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonStrong);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonProud);
+				buttonList.add(tmpButton);
+					
+				for (final ToggleButton b : buttonList){
+				    b.setOnClickListener(new View.OnClickListener() {
+				        @Override
+				        public void onClick(View v) {
+				        	for (final ToggleButton other : buttonList){
+				        		if (other != b)
+				        			other.setChecked(false);
+				        	}
+				        }
+				    });
+				}
+				
+				
+				
+				Button submitButton = (Button)findViewById(R.id.buttonSubPos);
+				submitButton.setOnClickListener(new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						
+						
+						for (final ToggleButton b : buttonList){
+						    if (b.isChecked()){
+						    	// B is the button that was pressed
+						    }
+						}
+						
+						Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
+						
+						//journalEnrty.putExtra("mybuttons", buttonList.t);
+						startActivity(journalEnrty);
+					}
+				});
 				//switcher = (ViewSwitcher) findViewById(R.id.positiveF);
 			}
 		});
@@ -65,6 +126,7 @@ public class EmotionActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				setContentView(R.layout.neutral_feelings);
+			
 				//switcher = (ViewSwitcher) findViewById(R.id.neutralF);
 			}
 		});
@@ -74,36 +136,8 @@ public class EmotionActivity extends Activity{
 				.onGenericMotionEvent(event)
 			}
 		*/
-	Button submitButton = (Button)findViewById(R.id.buttonSubPos);
-	submitButton.setOnClickListener(new View.OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			ArrayList<Button> buttonList = new ArrayList<Button>();
-			//Adding buttons to the list to pass on
-			Button tmpButton = (Button)findViewById(R.id.buttonActive);
-			buttonList.add(tmpButton);
-			tmpButton = (Button)findViewById(R.id.buttonHappy);
-			buttonList.add(tmpButton);
-			tmpButton = (Button)findViewById(R.id.buttonConfident);
-			buttonList.add(tmpButton);
-			tmpButton = (Button)findViewById(R.id.buttonAttractive);
-			buttonList.add(tmpButton);
-			tmpButton = (Button)findViewById(R.id.buttonFocused);
-			buttonList.add(tmpButton);
-			tmpButton = (Button)findViewById(R.id.buttonCalm);
-			buttonList.add(tmpButton);
-			tmpButton = (Button)findViewById(R.id.buttonFunny);
-			buttonList.add(tmpButton);
-			tmpButton = (Button)findViewById(R.id.buttonSurprised);
-			buttonList.add(tmpButton);
-			
-			Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
-			
-			//journalEnrty.putExtra("mybuttons", buttonList.t);
-			startActivity(journalEnrty);
-		}
-	});
+	
+	
 	}
 	
 }
