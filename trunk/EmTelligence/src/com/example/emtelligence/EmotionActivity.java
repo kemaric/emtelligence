@@ -49,6 +49,60 @@ public class EmotionActivity extends Activity{
 				// TODO Auto-generated method stub
 				setContentView(R.layout.negative_feelings);
 				
+				final ArrayList<ToggleButton> buttonList = new ArrayList<ToggleButton>();
+				//Adding buttons to the list to pass on
+				ToggleButton tmpButton = (ToggleButton)findViewById(R.id.buttonActive);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonAngry);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonAnxious);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonConfused);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonEnvious);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonLazy);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonSad);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonSurprised);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonTired);
+				buttonList.add(tmpButton);
+					
+				for (final ToggleButton b : buttonList){
+				    b.setOnClickListener(new View.OnClickListener() {
+				        @Override
+				        public void onClick(View v) {
+				        	for (final ToggleButton other : buttonList){
+				        		if (other != b)
+				        			other.setChecked(false);
+				        	}
+				        }
+				    });
+				}
+				
+				
+				
+				Button submitButton = (Button)findViewById(R.id.buttonSubNeg);
+				submitButton.setOnClickListener(new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						
+						
+						for (final ToggleButton b : buttonList){
+						    if (b.isChecked()){
+						    	// B is the button that was pressed
+						    }
+						}
+						
+						Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
+						
+						//journalEnrty.putExtra("mybuttons", buttonList.t);
+						startActivity(journalEnrty);
+					}
+				});
 				//switcher = (ViewSwitcher) findViewById(R.id.negativeF);
 			}
 		});
@@ -126,7 +180,50 @@ public class EmotionActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				setContentView(R.layout.neutral_feelings);
-			
+				final ArrayList<ToggleButton> buttonList = new ArrayList<ToggleButton>();
+				//Adding buttons to the list to pass on
+				ToggleButton tmpButton = (ToggleButton)findViewById(R.id.buttonActive);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonBored);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonConfused);
+				buttonList.add(tmpButton);
+				tmpButton = (ToggleButton)findViewById(R.id.buttonIndifferent);
+				buttonList.add(tmpButton);
+					
+				for (final ToggleButton b : buttonList){
+				    b.setOnClickListener(new View.OnClickListener() {
+				        @Override
+				        public void onClick(View v) {
+				        	for (final ToggleButton other : buttonList){
+				        		if (other != b)
+				        			other.setChecked(false);
+				        	}
+				        }
+				    });
+				}
+				
+				
+				
+				Button submitButton = (Button)findViewById(R.id.buttonSubNue);
+				submitButton.setOnClickListener(new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						
+						
+						for (final ToggleButton b : buttonList){
+						    if (b.isChecked()){
+						    	// B is the button that was pressed
+						    }
+						}
+						
+						Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
+						
+						//journalEnrty.putExtra("mybuttons", buttonList.t);
+						startActivity(journalEnrty);
+					}
+				});
 				//switcher = (ViewSwitcher) findViewById(R.id.neutralF);
 			}
 		});
