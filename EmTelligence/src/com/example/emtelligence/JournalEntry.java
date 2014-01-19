@@ -5,7 +5,7 @@ import java.util.Date;
 public class JournalEntry {
 	private int entryId;
 	private String description;
-	private int score;
+	//private int score;
 	public Date entryDate;
 	private Emotion emotion;
 	/**Full Constructor for an journal entry that takes in the description, 
@@ -13,20 +13,18 @@ public class JournalEntry {
 	public JournalEntry(){
 		
 	}
-	public JournalEntry(int entryID,String description, int score,
-			Date entryDate, Emotion emotion) {
+	public JournalEntry(int entryID,String description,Date entryDate, Emotion emotion) {
 		super();
 		this.entryId = entryID;
 		this.description = description;
-		this.score = score;
 		this.entryDate = entryDate;
 		this.emotion = emotion;
 	}
 	
+	
 	/**Basic Constructor that only have a score but no description **/
 	public JournalEntry(Date entrydate){
 		super();
-		this.score = 0;
 		this.entryDate = entrydate;
 		this.emotion = new Emotion();
 	}
@@ -46,12 +44,7 @@ public class JournalEntry {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public int getScore() {
-		return score;
-	}
-	public void setScore(int score) {
-		this.score = score;
-	}
+	
 	public Date getEntryDate() {
 		return entryDate;
 	}
@@ -70,7 +63,7 @@ public class JournalEntry {
 	@Override
 	public String toString() {
 		return "JournalEntry [entryId=" + entryId + ", description="
-				+ description + ", score=" + score + ", entryDate=" + entryDate
+				+ description + ", entryDate=" + entryDate
 				+ ", emotion=" + emotion + "]";
 	}
 	
