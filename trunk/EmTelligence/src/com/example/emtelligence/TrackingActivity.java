@@ -2,9 +2,11 @@ package com.example.emtelligence;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class TrackingActivity extends Activity{
 
@@ -17,8 +19,12 @@ public class TrackingActivity extends Activity{
 		
 		journalB = (Button)findViewById(R.id.journalButton);
 		reportB = (Button)findViewById(R.id.progressButton);
-	
-		journalB.setOnClickListener( new View.OnClickListener() {
+		
+		TextView txt1 = (TextView)findViewById(R.id.seeText);   
+		Typeface mFont = Typeface.createFromAsset(getAssets(), "Lucida Handwriting.ttf");		
+		txt1.setTypeface(mFont);
+		
+		journalB.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {

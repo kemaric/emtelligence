@@ -18,6 +18,8 @@
         android:layout_marginLeft="17dp"
         android:layout_marginTop="20dp"
         android:text="@string/see"
+         android:textColor="@color/green"
+        android:textSize="32sp" 
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <LinearLayout

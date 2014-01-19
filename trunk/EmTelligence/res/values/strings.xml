@@ -32,6 +32,8 @@
 	<string name="focused">focused</string>
 	<string name="calm">calm</string>
 	<string name="funny">funny</string>
+	<string name="intelligent">intelligent</string>
+	<string name="strong">strong</string>
 	
 	<!-- Neutral emotions -->
 	<string name="indifferent">indifferent</string>
