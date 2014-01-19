@@ -45,10 +45,10 @@
 	<string name="sad">sad</string>
 	<string name="anxious">anxious</string>
 	<string name="angry">angry</string>	
-	<string name="jealous">jealous</string>	
-	
+	<string name="envious">envious</string>	
+	<string name="tired">tired</string>	
 	<string name="surprised">surprised</string>
-	
+	<string name="lazy">lazy</string>
 	
 	<string name="submit">Submit</string>
 
