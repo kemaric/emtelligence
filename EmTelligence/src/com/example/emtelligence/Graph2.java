@@ -83,6 +83,9 @@ public class Graph2 extends Activity {
         final ArrayList<String> dates2 = dates;
         int start = dates.size() - 7;
         if(start < 0) start = 0;
+        int numDisplay = 6;
+        if(dates.size() <= numDisplay) numDisplay = dates.size() -1;
+        
         
         // graph with dynamically generated horizontal and vertical labels
         /* Graph for cumulative sum */ 
@@ -110,7 +113,7 @@ public class Graph2 extends Activity {
         // set view port, start=2, size=40
         graphView.setManualYAxisBounds(maxSum, minSum);
         
-        graphView.setViewPort(start, 6);
+        graphView.setViewPort(start, numDisplay);
         graphView.setScrollable(true);
         graphView.setScalable(true);
         graphView.getGraphViewStyle().setNumHorizontalLabels(3);
