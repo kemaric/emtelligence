@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="48dp"
+        android:layout_marginLeft="45dp"
         android:text="@string/em"
         android:textColor="@color/green"
         android:textSize="32sp" />
