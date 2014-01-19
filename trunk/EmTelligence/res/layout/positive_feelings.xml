@@ -22,10 +22,10 @@
 
     <ScrollView
         android:id="@+id/scrollView1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/button1"
-        android:layout_marginTop="30dp" >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp" >
 
         <TableLayout
             android:id="@+id/tableLayout1"
@@ -148,6 +148,16 @@
                     android:drawableTop="@drawable/strong_hov"
                     android:textOff="@string/strong"
                     android:textOn="@string/strong" />
+                
+                
+                <ToggleButton
+                    android:id="@+id/buttonProud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/proud_hov"
+                    android:textOff="@string/proud"
+                    android:textOn="@string/proud" />
             </TableRow>
         </TableLayout>
         

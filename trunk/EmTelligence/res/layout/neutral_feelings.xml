@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
- 	android:background="@drawable/bg"    
     tools:context=".MainActivity" >
 
     <TextView
@@ -20,88 +20,82 @@
         android:text="@string/i_feel..."
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TableLayout
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/button1"
+        android:layout_marginTop="30dp" >
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:stretchColumns="1" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" >
+
+                <ToggleButton
+                    android:id="@+id/buttonBored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/bored_hov"
+                    android:textOff="@string/bored"
+                    android:textOn="@string/bored" />
+
+                <ToggleButton
+                    android:id="@+id/buttonConfused"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/confused_hov"
+                    android:textOff="@string/confused"
+                    android:textOn="@string/confused" />
+
+                <ToggleButton
+                    android:id="@+id/buttonIndifferent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/indifferent_hov"
+                    android:textOff="@string/indifferent"
+                    android:textOn="@string/indifferent" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" >
+
+                <ToggleButton
+                    android:id="@+id/buttonConfident"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/confident_hov"
+                    android:textOff="@string/confident"
+                    android:textOn="@string/confident" />
+
+               
+            </TableRow>
+        </TableLayout>
+        
+	</ScrollView>
+
+    <Button
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" >
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <Button
-                android:id="@+id/buttonBored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/bored"
-                android:text="@string/bored"
-                android:textSize="12sp"
-                android:width="30dip" />
-
-            <Button
-                android:id="@+id/buttonConfused"
-               	android:drawableTop="@drawable/confused"
-               	android:background="@android:color/transparent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="30dip"
-                android:textSize="12sp"
-                android:text="@string/confused" />
-            
-            <Button
-                android:id="@+id/buttonIndifferent"
-               	android:drawableTop="@drawable/indifferent"
-               	android:background="@android:color/transparent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="30dip"
-                android:textSize="12sp"
-                android:text="@string/indifferent" />
-            
-        </TableRow>
-
- <!--        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-             <Button
-                android:id="@+id/buttonAttractive"
-               	android:drawableTop="@drawable/attractive"
-               	android:background="@android:color/transparent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="30dip"
-                android:textSize="12sp"
-                android:text="@string/attractive" />
-
-            <Button
-                android:id="@+id/buttonFocused"
-               	android:drawableTop="@drawable/focused"
-               	android:background="@android:color/transparent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="30dip"
-                android:textSize="12sp"
-                android:text="@string/focused" />
-            
-            <Button
-                android:id="@+id/buttonCalm"
-               	android:drawableTop="@drawable/calm"
-               	android:background="@android:color/transparent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="30dip"
-                android:textSize="12sp"
-                android:text="@string/calm" />
-
-        </TableRow> -->
-
-       
-    </TableLayout>
+        android:layout_marginBottom="18dp"
+        android:text="@string/submit" />
 
 </RelativeLayout>
