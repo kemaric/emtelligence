@@ -1,24 +1,28 @@
 package com.example.emtelligence;
 
 public class Emotion {
-	public enum EmotionalValue {
-		VERY_NEGATIVE(-3),MODERATELY_NEGATIVE(-2),SOMEWHAT_NEGATIVE(-1),
-		NEUTRAL(0),SOMEWHAT_POSITIVE(1),MODERATELY_POSITIVE(2),VERY_POSITIVE(3);
-		private final int id;
-		private EmotionalValue(int id){this.id = id;}
-		public int getValue(){return id;}
+	/*public enum EmotionalValue {
 		
-		/**Gets the EmotionalValue object based on the value input.**/
+		private final int id;
+		private EmotionalValue(int id){
+			this.id = id;
+			}
+		public int getValue(){
+			return id;
+			}
+		
+		/**Gets the EmotionalValue object based on the value input.
 		public static EmotionalValue valueOf(int val) {
 		    for (EmotionalValue category : values()) {
-		        if (category.equals(val)) {
+		    	int catval = category.getValue();
+		        if (catval == val) {
 		            return category;
 		        }
 		    }    
 		    throw new IllegalArgumentException(String.valueOf(val));
 		}
-		//public String toString(){return "" + id + "";}
-	}
+		public String toString(){return "" + id + "";}
+	}*/
 	
 	private String feeling;
 	private EmotionalValue ev;

@@ -20,9 +20,11 @@ import android.widget.ViewSwitcher;
 public class EmotionActivity extends Activity{
 
 	private ViewSwitcher switcher;
+	private int emotionType = 0;
 	private ImageButton positiveB,negativeB,neutralB;
 	@SuppressLint("NewApi")
 	@Override
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
@@ -31,6 +33,7 @@ public class EmotionActivity extends Activity{
 		negativeB = (ImageButton)findViewById(R.id.negativeButton);
 		positiveB = (ImageButton)findViewById(R.id.positiveButton);
 		neutralB = (ImageButton)findViewById(R.id.neutralButton);
+		
 		//switcher = (ViewFlipper)findViewById(R.id)
 		
 		TextView txt1 = (TextView)findViewById(R.id.pageTitle);  
@@ -95,7 +98,8 @@ public class EmotionActivity extends Activity{
 						    	// B is the button that was pressed
 						    	Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
 								
-								journalEnrty.putExtra("mybuttons", b.toString().substring(6, b.toString().length()));
+								journalEnrty.putExtra("mybuttons",b.getText().toString());
+								journalEnrty.putExtra("EMOTION_TYPE",emotionType);
 								startActivity(journalEnrty);
 						    }
 						}	
@@ -157,13 +161,14 @@ public class EmotionActivity extends Activity{
 					@Override
 					public void onClick(View v) {
 						
-						
+						emotionType = 1;
 						for (final ToggleButton b : buttonList){
 						    if (b.isChecked()){
 						    	// B is the button that was pressed
 								Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
 								
-								journalEnrty.putExtra("mybuttons", b.toString().substring(6, b.toString().length()));
+								journalEnrty.putExtra("mybuttons", b.getText().toString());
+								journalEnrty.putExtra("EMOTION_TYPE",emotionType);
 								startActivity(journalEnrty);
 						    }
 						}
@@ -176,6 +181,8 @@ public class EmotionActivity extends Activity{
 		neutralB.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				emotionType = 0;
+				
 				// TODO Auto-generated method stub
 				setContentView(R.layout.neutral_feelings);
 				final ArrayList<ToggleButton> buttonList = new ArrayList<ToggleButton>();
@@ -207,13 +214,14 @@ public class EmotionActivity extends Activity{
 					@Override
 					public void onClick(View v) {
 						
-						
+						emotionType = -1;
 						for (final ToggleButton b : buttonList){
 						    if (b.isChecked()){
 						    	// B is the button that was pressed
 						    	Intent journalEnrty = new Intent(getApplicationContext(), JournalActivity.class);
 								
-								journalEnrty.putExtra("mybuttons", b.toString().substring(6, b.toString().length()));
+								journalEnrty.putExtra("mybuttons", b.getText().toString());
+								journalEnrty.putExtra("EMOTION_TYPE",emotionType);
 								startActivity(journalEnrty);
 						    }
 						}

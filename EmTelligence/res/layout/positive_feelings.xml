@@ -132,7 +132,7 @@
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/intelligent_hov"
                     android:textOff="@string/intelligent"
-                    android:textOn="@string/intelligent" />
+                    android:textOn="@string/intelligent"/>
             </TableRow>
 
             <TableRow

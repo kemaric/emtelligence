@@ -9,11 +9,13 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	//Context context;
 	private Button recordB, trackB;
+	public JournalDatabaseAdaper db;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ public class MainActivity extends Activity {
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main);
 		
-		//context = this;		
+		
 		recordB = (Button)findViewById(R.id.recordButton);
 		trackB = (Button)findViewById(R.id.trackButton);
 				
@@ -31,7 +33,8 @@ public class MainActivity extends Activity {
 		Typeface mFont = Typeface.createFromAsset(getAssets(), "Lucida Handwriting.ttf");		
 		txt1.setTypeface(mFont);
 		txt2.setTypeface(mFont);
-
+		
+		
 		
 		/*function for record button action to make journal entry*/
 		recordB.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,10 @@
 package com.example.emtelligence;
 
 import java.util.Date;
+import java.util.Locale;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class JournalEntry {
 	private int entryId;
@@ -11,7 +15,7 @@ public class JournalEntry {
 	/**Full Constructor for an journal entry that takes in the description, 
 	 * score and date. **/
 	public JournalEntry(){
-		
+
 	}
 	public JournalEntry(int entryID,String description,Date entryDate, Emotion emotion) {
 		super();
@@ -20,21 +24,34 @@ public class JournalEntry {
 		this.entryDate = entryDate;
 		this.emotion = emotion;
 	}
-	
+
 	public JournalEntry(Emotion emotion, String description) {
 		super();
 		this.description = description;
-		this.entryDate = new Date();
+		this.entryDate = this.getEntryDateObject(new Date().toString());
 		this.emotion = emotion;
 	}
-	
+
 	/**Basic Constructor that only have a score but no description **/
 	public JournalEntry(Date entrydate){
 		super();
 		this.entryDate = entrydate;
 		this.emotion = new Emotion();
 	}
-	
+
+	/*public Date getCurrentDate(){
+		Date parsedDate = null;
+		Date now = new Date();
+		String dateInString = now.toString();
+		SimpleDateFormat formatter =  new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy");		
+		 try {
+			parsedDate = formatter.parse(dateInString);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return parsedDate;
+	}*/
 	
 	/**Standard Getters and Setters for the entry items.**/
 	public int getEntryId() {
@@ -50,13 +67,28 @@ public class JournalEntry {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	public Date getEntryDate() {
 		return entryDate;
+	}
+
+	public Date getEntryDateObject(String date) {
+		Date entryDateObj = null;
+		SimpleDateFormat formatter =  new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy");	
+		try {
+			entryDateObj = formatter.parse(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+		return entryDateObj;
 	}
 	public void setEntryDate(Date entryDate) {
 		this.entryDate = entryDate;
 	}
+
 
 	public Emotion getEmotion() {
 		return emotion;
@@ -72,6 +104,5 @@ public class JournalEntry {
 				+ description + ", entryDate=" + entryDate
 				+ ", emotion=" + emotion + "]";
 	}
-	
-	
+
 }

@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import android.database.Cursor;
 import android.database.SQLException;
@@ -33,21 +35,18 @@ public class Graph extends Activity {
         /*
          * Get the Journal Entries from
          */
-        MySQLiteHelper sqlhelper = new MySQLiteHelper(this);
-        SQLiteDatabase db = sqlhelper.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT  * FROM " + "entries", null);
-        if(c.equals(null))
+        JournalDatabaseAdaper sqlhelper = new JournalDatabaseAdaper(this);
+       // if(c.equals(null))
         	//db.
       //  c.moveToFirst();
        // c.getString(c.getColumnIndexOrThrow(columnName));
        // db.u
         Log.d("Feteching: ", "Fetching Data .."); 
-        ArrayList<JournalEntry> JournalList = new ArrayList<JournalEntry>();
+        ArrayList<JournalEntry> JournalList;
         JournalEntry entry = null;
-        ArrayList<String> dates = new ArrayList<String>();
+        Set<String> dates = new HashSet<String>();
         String date = "", tempDate = "";
-        
-        JournalList = (ArrayList<JournalEntry>) sqlhelper.getAllJournalEntries();
+      JournalList = (ArrayList<JournalEntry>) sqlhelper.getJournalEntries(null,null,null);
         
         if(JournalList.size() != 0){
 	        
@@ -58,16 +57,17 @@ public class Graph extends Activity {
 	        	entry = JournalList.get(index);
 	        	sum = entry.getEmotion().getEv().getValue();
 	        	date = "" + entry.getEntryDate().getMonth() + "/" + entry.getEntryDate().getDate();
-	        	date = date.substring(4, 11) + date.substring(24);
+	        	//date = date.substring(4, 11) + date.substring(24);
 	        	dates.add(date);
 	        	tempDate = date;
-	            while(tempDate.equals(date) && index < num){
-	            	index += 1;
+	            while(tempDate.equals(date) && index <= num-1){
 	            	entry = JournalList.get(index);
 	            	tempDate = "" + entry.getEntryDate().getMonth() + "/" + entry.getEntryDate().getDate();
 	            	if(tempDate.equals(date)){
 	            		sum += entry.getEmotion().getEv().getValue();
 	            	}
+	            	index += 1;
+
 	            }
 	            minSum = Math.min(sum, minSum);
 	            maxSum = Math.max(sum, maxSum);
@@ -92,7 +92,7 @@ public class Graph extends Activity {
 	            dates.add(date);
 	        }
         }
-        final ArrayList<String> dates2 = dates;
+        final Set<String> dates2 = dates;
         int start = dates.size() - 7;
         if(start < 0) start = 0;
         int numDisplay = 6;
@@ -110,7 +110,7 @@ public class Graph extends Activity {
         graphView.setCustomLabelFormatter(new CustomLabelFormatter() {
            public String formatLabel(double value, boolean isValueX) {
               if (isValueX) {
-            	  return dates2.get((int) value);
+            	  return (String) dates2.toArray()[(int) value];
               }
               return null; // let graphview generate Y-axis label for us
            }

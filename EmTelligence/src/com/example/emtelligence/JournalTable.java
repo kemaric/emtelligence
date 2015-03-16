@@ -2,18 +2,27 @@ package com.example.emtelligence;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TableRow.LayoutParams;
 import android.widget.TextView;
 public class JournalTable extends Activity {
 
-	private TableLayout journalTable; 
-	ArrayList<JournalEntry> JournalList;
+	private ListView journalTable; 
+	public static ArrayList<JournalEntry> JournalList;
+	JournalDatabaseAdaper sqlhelper;
+	private ArrayAdapter<JournalEntry> adapter2;
 	int counter = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,23 +30,53 @@ public class JournalTable extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.journal_table);
 
-		JournalEntry a = new JournalEntry(1,"I just had sex",
-				new Date(), new Emotion(Emotion.EmotionalValue.VERY_POSITIVE, "happy as shit!"));
+		/*JournalEntry a = new JournalEntry(1,"I just climbed a mountain",
+				new Date(), new Emotion(Emotion.EmotionalValue.VERY_POSITIVE, "extremely happy!"));
 		JournalEntry b = new JournalEntry(2,"I punched a tree when my dad yelled at me",
-				new Date(), new Emotion(Emotion.EmotionalValue.VERY_NEGATIVE, "angry as shit!"));
+				new Date(), new Emotion(Emotion.EmotionalValue.VERY_NEGATIVE, "angry as hell!"));
 		JournalEntry c = new JournalEntry(3,"I just failed my test",
 				new Date(), new Emotion(Emotion.EmotionalValue.MODERATELY_NEGATIVE, "dissapointed"));
 		JournalEntry d = new JournalEntry(4,"I just had free cookie",
 				new Date(), new Emotion(Emotion.EmotionalValue.SOMEWHAT_POSITIVE, "happy"));
-
-		journalTable = (TableLayout)findViewById(R.id.header);
-		JournalList = new ArrayList<JournalEntry>();
-		JournalList.add(a);
-		JournalList.add(b);
-		JournalList.add(c);
-		JournalList.add(d);
+*/
+		journalTable = (ListView)findViewById(R.id.entry_table);
+		sqlhelper = new JournalDatabaseAdaper(this);
+		
+		JournalList = (ArrayList<JournalEntry>) sqlhelper.getJournalEntries(null,null,null);
+		
 		// create a new TableRow
-		createTableRows();
+		//createTableRows();
+		
+		adapter2 = new MyEntryAdapter(this, R.layout.entry_view, JournalList);
+				
+				
+		journalTable.setAdapter(adapter2);
+		journalTable.setOnItemClickListener(journalTable.getOnItemClickListener());
+				
+				
+				// this is the click listenier for the list imtems
+		journalTable.setOnItemClickListener(new OnItemClickListener() {
+			        public void onItemClick(AdapterView<?> parent, View view,
+			                int position, long id) {
+
+//			       Object o = listView.getItemAtPosition(position);
+//			       String str=(String)o;//As you are using Default String Adapter
+//			       Toast.makeText(getBaseContext(),str+position,Toast.LENGTH_SHORT).show();
+//			       
+			        //We add the index of the item  to a bundle so the next activity can get the data
+			       Bundle extras = new Bundle();
+					extras.putLong("position", position);
+					
+					Intent intent = new Intent(JournalTable.this,EntryView.class);
+					intent.putExtras(extras);
+					startActivity(intent);
+			        }
+
+				
+			  
+			    });
+				
+			
 
 	}
 	@SuppressLint("NewApi")
@@ -118,8 +157,8 @@ public class JournalTable extends Activity {
 			 score = new TextView(this);
 			score.setText(String.valueOf(JournalList.get(curr).getEmotion().getEv()));
 			score.setId(400+curr);
-			String tmp = String.valueOf((JournalList.get(curr).getEmotion().getEv().getValue()));
-			if(JournalList.get(curr).getEmotion().getEv().getValue() > 0)
+			String tmp = String.valueOf((JournalList.get(curr).getEmotion().getEv()));
+			if(JournalList.get(curr).getEmotion().getEv().ordinal() > 0)
 				score.setText("+" + tmp);
 			else score.setText(tmp);
 			score.setTextColor(Color.WHITE);

@@ -43,9 +43,9 @@ public class Graph2 extends Activity {
 	        int index = 0;
 	        for (int day=0; index<num; day++) { //Loop through all dates
 	        	entry = JournalList.get(index);
-	        	sum += entry.getEmotion().getEv().getValue();
+	        	sum += entry.getEmotion().getEv().ordinal();
 	        	date = "" + entry.getEntryDate().getMonth() + "/" + entry.getEntryDate().getDate();
-	        	date = date.substring(4, 11) + date.substring(24);
+	        	//date = date.substring(4, 11) + date.substring(24);
 	      
 	        	dates.add(date);
 	        	tempDate = date;
@@ -54,7 +54,7 @@ public class Graph2 extends Activity {
 	            	entry = JournalList.get(index);
 	            	tempDate = "" + entry.getEntryDate().getMonth() + "/" + entry.getEntryDate().getDate();
 	            	if(tempDate.equals(date)){
-	            		sum += entry.getEmotion().getEv().getValue();
+	            		sum += entry.getEmotion().getEv().ordinal();
 	            	}
 	            }
 	            minSum = Math.min(sum, minSum);

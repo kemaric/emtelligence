@@ -24,7 +24,6 @@
         android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/button1"
         android:layout_marginTop="30dp" >
 
         <TableLayout

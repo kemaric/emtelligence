@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+     <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+          <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/entryContainter">
+            
+		    <TextView
+		        android:id="@+id/entryEmotionCol"
+		        android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+		        android:text="@string/entry_emotion"
+		        android:layout_marginTop="20dp"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+		    <TextView
+		        android:id="@+id/entryDateCol"
+		        android:layout_width="wrap_content"
+                android:layout_height="wrap_content"                
+                android:layout_centerInParent="true"
+                
+                android:layout_alignParentTop="true"		        
+                android:layout_marginTop="20dp"
+		        android:text="@string/entry_date"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+   			<TextView
+   			    android:id="@+id/entry_score"
+   			 	android:layout_width="wrap_content"
+                android:layout_height="wrap_content"                
+                android:layout_alignRight="@+id/entryEmotionCol"
+                android:layout_alignParentTop="true"		        
+                android:layout_marginTop="20dp"
+   			    android:text="@string/entry_score"
+   			    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+     			   </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
