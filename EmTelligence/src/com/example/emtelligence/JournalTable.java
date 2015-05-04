@@ -1,7 +1,4 @@
 package com.example.emtelligence;
-import java.util.ArrayList;
-import java.util.Date;
-
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -10,13 +7,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TableRow.LayoutParams;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 public class JournalTable extends Activity {
 
 	private ListView journalTable; 
@@ -79,7 +78,7 @@ public class JournalTable extends Activity {
 			
 
 	}
-	@SuppressLint("NewApi")
+	/*@SuppressLint("NewApi")
 	public void createTableRows()
 	{
 		counter = 0;
@@ -112,7 +111,7 @@ public class JournalTable extends Activity {
 		row.addView(emotion);
 		
 		//Score column
-		TextView score = new TextView(this);
+		TextView  DateFormat.getDateInstance(DateFormat.SHORT)e = new TextView(this);
 		score.setId(400);
 		score.setText("Score");
 		score.setTextColor(Color.WHITE);
@@ -171,5 +170,5 @@ public class JournalTable extends Activity {
 			journalTable.addView(row,new TableLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
 			
 		}
-	}
+	}*/
 }

@@ -1,20 +1,18 @@
 package com.example.emtelligence;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import com.example.emtelligence.EmotionalValue;
-
+import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.content.ContentValues;
-import android.content.Context;
+
+import com.example.emtelligence.EmotionalValue;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 //private final Context outcontext;
 
@@ -38,7 +36,7 @@ public class JournalDatabaseAdaper  {
 		values.put(JournalDBHelper.DATE_TIME,entry.getEntryDate().toString());  
 		values.put(JournalDBHelper.EMOTION, entry.getEmotion().getFeeling()); 
 		values.put(JournalDBHelper.DESCRIPTION, entry.getDescription()); 
-		values.put(JournalDBHelper.SCORE, entry.getEmotion().getEv().getValue()); 
+		values.put(JournalDBHelper.SCORE, entry.getEmotion().getEv().getValue());
 		// 3. insert
 		long id =db.insert(JournalDBHelper.TABLE_NAME, // table
 				null, //nullColumnHack
@@ -81,8 +79,9 @@ public class JournalDatabaseAdaper  {
 		jEntry.setEntryDate(jEntry.getEntryDateObject(cursor.getString(dateInd).toString()));
 		int emotionScore = Integer.valueOf(cursor.getString(score));
 		String feeling = cursor.getString(emotionInd);
-		EmotionalValue ev = EmotionalValue.valueOf(emotionScore);
-		jEntry.setEmotion(new Emotion(ev,feeling));		jEntry.setDescription(cursor.getString(descInd));
+		//EmotionalValue ev = EmotionalValue.valueOf(emotionScore);
+		jEntry.setEmotion(new Emotion(EmotionalValue.valueOf(emotionScore),feeling));
+		jEntry.setDescription(cursor.getString(descInd));
 		//log 
 		Log.d("getJournalEntry("+id+")", jEntry.toString());
 

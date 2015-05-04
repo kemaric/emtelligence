@@ -1,21 +1,18 @@
 package com.example.emtelligence;
 
-import java.util.ArrayList;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-import android.widget.ViewFlipper;
 import android.widget.ViewSwitcher;
+
+import java.util.ArrayList;
 
 public class EmotionActivity extends Activity{
 
@@ -24,7 +21,9 @@ public class EmotionActivity extends Activity{
 	private ImageButton positiveB,negativeB,neutralB;
 	@SuppressLint("NewApi")
 	@Override
-	
+
+
+	//TODO: Create submit button function to handle the submissions cases.
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
@@ -50,6 +49,7 @@ public class EmotionActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				emotionType= -1;
 				setContentView(R.layout.negative_feelings);
 				
 				final ArrayList<ToggleButton> buttonList = new ArrayList<ToggleButton>();
@@ -115,7 +115,7 @@ public class EmotionActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				setContentView(R.layout.positive_feelings);
-				
+				emotionType = 1;
 				final ArrayList<ToggleButton> buttonList = new ArrayList<ToggleButton>();
 				//Adding buttons to the list to pass on
 				ToggleButton tmpButton = (ToggleButton)findViewById(R.id.buttonActive);
@@ -161,7 +161,7 @@ public class EmotionActivity extends Activity{
 					@Override
 					public void onClick(View v) {
 						
-						emotionType = 1;
+
 						for (final ToggleButton b : buttonList){
 						    if (b.isChecked()){
 						    	// B is the button that was pressed
@@ -214,7 +214,6 @@ public class EmotionActivity extends Activity{
 					@Override
 					public void onClick(View v) {
 						
-						emotionType = -1;
 						for (final ToggleButton b : buttonList){
 						    if (b.isChecked()){
 						    	// B is the button that was pressed

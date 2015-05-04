@@ -6,7 +6,7 @@ public enum EmotionalValue {
 	
 	private int value;
 	
-	private EmotionalValue(int val){
+	EmotionalValue(int val){
 		this.value = val;
 	}
 	

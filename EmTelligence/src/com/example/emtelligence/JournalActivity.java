@@ -1,23 +1,16 @@
 package com.example.emtelligence;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+
 //import android.database.sqlite
-import android.database.sqlite.SQLiteOpenHelper;
 public class JournalActivity extends Activity{
 	EditText feeling, description;
 	private String array_spinner[];
@@ -25,7 +18,8 @@ public class JournalActivity extends Activity{
 	Button submitB;
 	JournalEntry jEntry;
 	JournalDatabaseAdaper sqlhelper;
-	
+	String feels = "other";
+	int emotionTyp = 0;
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
@@ -33,8 +27,8 @@ public class JournalActivity extends Activity{
 		Bundle extras = getIntent().getExtras();
 		
 		//Getting the user imput from the emotion icons
-		String feels = "other";
-		int emotionTyp = 0;
+		feels = "other";
+		emotionTyp = 0;
 		if (extras != null) {
 			feels = extras.getString("mybuttons");
 			emotionTyp = extras.getInt("EMOTION_TYPE");
@@ -42,22 +36,28 @@ public class JournalActivity extends Activity{
 		jEntry = null;
 		
 		//Feeling will be filled with the emotion they picked
+
 		feeling = (EditText)findViewById(R.id.feelingInput);
 		feeling.setText(feels);
-	
+
 		scoreBox = (Spinner)findViewById(R.id.spinner1);
 		description = (EditText)findViewById(R.id.feelingExplanation);
-		array_spinner=new String[4];
-		array_spinner[0]= "Neutral";
-		array_spinner[1]="Some what";
-		array_spinner[2]="Moderately";
-		array_spinner[3]="Very";
-	
+		if(emotionTyp != 0){
+			array_spinner=new String[3];
+			array_spinner[0]="Some what";
+			array_spinner[1]="Moderately";
+			array_spinner[2]="Very";
+
+		}else{
+			array_spinner=new String[1];
+			array_spinner[0]="Neutral";
+		}
+
 		final ArrayAdapter<?> adapter = new ArrayAdapter<Object>(this,android.R.layout.simple_spinner_item,
 				array_spinner);
 		submitB = (Button)findViewById(R.id.submitB);
 		scoreBox.setAdapter(adapter);
-		
+
 		sqlhelper = new JournalDatabaseAdaper(this); 
 		//scoreBox.get
 		submitB.setOnClickListener(new View.OnClickListener() {
@@ -65,21 +65,23 @@ public class JournalActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				String level = (String) adapter.getItem(scoreBox.getSelectedItemPosition());
-				Integer emotionLvl = 0;
-				if (level.equals("VERY_POSITIVE")) {
-					emotionLvl = EmotionalValue.VERY_POSITIVE.ordinal();
-				} else if (level.equals("VERY_NEGATIVE")) {
-					emotionLvl = EmotionalValue.VERY_NEGATIVE.ordinal();
-				}else if (level.equals("MODERATELY_NEGATIVE")) {
-					emotionLvl = EmotionalValue.MODERATELY_NEGATIVE.ordinal();
-				}else if (level.equals("SOMEWHAT_NEGATIVE")) {
-					emotionLvl = EmotionalValue.SOMEWHAT_NEGATIVE.ordinal();
-				}else if (level.equals("NEUTRAL")) {
-					emotionLvl = EmotionalValue.NEUTRAL.ordinal();
-				}else if (level.equals("SOMEWHAT_POSITIVE")) {
-					emotionLvl = EmotionalValue.SOMEWHAT_POSITIVE.ordinal();
-				}else if (level.equals("MODERATELY_POSITIVE")) {
-					emotionLvl = EmotionalValue.MODERATELY_POSITIVE.ordinal();
+				Integer emotionLvl;
+
+				//TODO: Change this section (make it choose positive/negative 1,2,3 based on emotion)
+				/**This is very dumb. Should ultimately only check for if you picked positive,
+				 * negative or neutral and depending on that, the +/- will be applied. A Neutral of
+				 * a +/- is just +/- 1.
+				 *
+				 * In here emotionLvl never gets changed so the value stays as 0.
+				**/
+				if (level.equals("Some what")) {
+					emotionLvl = emotionTyp*1;
+				} else if (level.equals("Moderately")) {
+					emotionLvl = emotionTyp*2;
+				}else if (level.equals("Very")) {
+					emotionLvl = emotionTyp*3;
+				}else{
+					emotionLvl = 0;
 				}
 
 				JournalEntry jEntry = new JournalEntry(new 

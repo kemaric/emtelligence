@@ -1,23 +1,13 @@
 package com.example.emtelligence;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.ListActivity;
-import android.app.LoaderManager;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v4.widget.SimpleCursorAdapter;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager.LayoutParams;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.TableLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TableListView extends ListActivity {
 	
@@ -55,7 +45,7 @@ public class TableListView extends ListActivity {
 
     @Override 
     public void onListItemClick(ListView l, View v, int position, long id) {
-        // Do something when a list item is clicked
+
     }
 }
 

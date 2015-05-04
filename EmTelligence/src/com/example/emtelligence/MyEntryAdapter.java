@@ -1,18 +1,17 @@
 package com.example.emtelligence;
 
-import java.util.ArrayList;
-
-
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 
 
 public class MyEntryAdapter extends ArrayAdapter<JournalEntry>  {
@@ -42,9 +41,12 @@ public class MyEntryAdapter extends ArrayAdapter<JournalEntry>  {
 			//Drawable img ;
 			if (item != null) {
 				emotion.setText(item.getEmotion().getFeeling());
-				date.setText("" + item.getEntryDate().getMonth() + "-" +item.getEntryDate().getDate() 
-						+"-"+ item.getEntryDate().getYear() + " " + item.getEntryDate().getHours() +
-						":" + item.getEntryDate().getMinutes());
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(item.getEntryDate());
+				String dateTime = ""+cal.get(cal.MONTH)+"-"+cal.get(cal.DATE)+"-0"+cal.get(cal.YEAR)+
+						" "+cal.get(cal.HOUR)+":"+cal.get(cal.MINUTE);
+				Log.d("Info","Entry date; " + dateTime);
+				date.setText(dateTime);
 				
 				score.setText(String.valueOf(item.getEmotion().getEv().getValue()));
 				switch (item.getEmotion().getEv()){
