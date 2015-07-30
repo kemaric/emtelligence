@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.TextView;
-
+import com.example.emtelligence.CustomViews.ReminderView;
 public class SettingsActivity extends Activity{
 
 	@Override
@@ -19,4 +19,5 @@ public class SettingsActivity extends Activity{
 		
 		
 	}
+
 }

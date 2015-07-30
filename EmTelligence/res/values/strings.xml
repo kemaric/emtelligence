@@ -7,7 +7,7 @@
 	
     <string name="record">Record</string>
     <string name="track">Track</string>
-    
+    <string name="myFirebaseRef">https://emtelligence.firebaseio.com/</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="i_feel...">I feel&#8230;</string>

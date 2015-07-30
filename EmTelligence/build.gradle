@@ -10,7 +10,9 @@ buildscript {
 apply plugin: 'com.android.application'
 
 dependencies {
-   compile fileTree(dir: 'libs', include: '*.jar')
+    compile 'com.sendgrid:sendgrid-java:2.2.1'
+    compile 'com.firebase:firebase-client-android:2.2.4'
+    compile fileTree(dir: 'libs', include: '*.jar')
     //compile 'com.jjoe64:graphview:4.0.1'
 }
 
@@ -18,6 +20,11 @@ android {
     compileSdkVersion 18
     buildToolsVersion "19.1"
 
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
     /*sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'

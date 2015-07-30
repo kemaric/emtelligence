@@ -26,12 +26,107 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+//TODO; Change this and graph2 to be fragments to save on memory and the creation of less activities.
 public class Graph extends Activity {
 	private Button switchGraph;
+    private GraphView graphView;
+    private int CURRENT_GRAPH = -1;
+
+    public void setCumulativeGraphView(GraphView graph, List<JournalEntry> data){
+        //Creating a hashmap of the past entries to display on the graph.
+        HashMap<Date,Integer> emotionValueDates = new HashMap<Date,Integer>();
+        DataPoint[] dataList;
+        //if (CURRENT_GRAPH == -1) CURRENT_GRAPH
+        int num = 0, sum = 0, minSum = 0, maxSum = 0;
+        if(data.size() != 0){
+
+            num = data.size(); //Make number of entries
+
+            for(JournalEntry entry: data){
+                int entryScore = entry.getEmotion().getEv().getValue();
+                if(emotionValueDates.containsKey(entry.getEntryDate())){
+                    int prevDateScore = emotionValueDates.get(entry.getEntryDate());
+                    emotionValueDates.put(entry.getEntryDate(),prevDateScore+entryScore);
+                }else{
+                    emotionValueDates.put(entry.getEntryDate(),entryScore);
+                }
+            }
+            List<Map.Entry<Date,Integer>> entryDates = new ArrayList<Map.Entry<Date, Integer>>(emotionValueDates.entrySet());
+            Collections.sort(entryDates, new Comparator<Map.Entry<Date, Integer>>() {
+                @Override
+                public int compare(Map.Entry<Date, Integer> lhs, Map.Entry<Date, Integer> rhs) {
+                    return lhs.getKey().compareTo(rhs.getKey());
+                }
+            });
+
+
+            int index = 0;
+            dataList = new DataPoint[entryDates.size()];
+            for(Map.Entry<Date,Integer> entryDate: entryDates){
+                dataList[index++] = new DataPoint(entryDate.getKey(),entryDate.getValue());
+            }
+
+        }
+        else{
+            //For testing
+            num = 150;
+            dataList = new DataPoint[num];
+            for (int i=0; i<num; i++) {
+                sum = (int) (Math.random() * 20.0 - 10.0);
+                minSum = Math.min(sum, minSum);
+                maxSum = Math.max(sum, maxSum);
+                Calendar currDate = Calendar.getInstance();
+                currDate.add(Calendar.DATE,(-(num-i)));
+                Date d1 = currDate.getTime();
+
+                dataList[i]= new DataPoint(d1,sum);
+
+            }
+        }
+
+
+        int numDisplay = 6;
+
+        // graph with dynamically generated horizontal and vertical labels
+        /* Graph for sum in single day */
+        String heading = "Emotional History";
+
+        if(data.size() == 0) heading = "Example " + heading;
+        LineGraphSeries graphSeries = new LineGraphSeries(dataList);
+
+        // add data
+        graphView.addSeries(graphSeries);
+        graphView.setTitle(heading);
+        graphView.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext(), DateFormat.getDateInstance(DateFormat.SHORT)));
+        graphView.getViewport().setScrollable(true);
+        graphView.getViewport().setMaxY(10);
+        graphView.getViewport().setMinY(-10);
+        graphView.getViewport().setScalable(true);
+
+        int vertLabels = maxSum-minSum;
+        while(vertLabels > 10) vertLabels /= 2;
+        graphView.getGridLabelRenderer().setNumVerticalLabels(5);
+
+        /* Layout stuffs */
+        switchGraph = (Button)findViewById(R.id.switchGraphButton1);
+        switchGraph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent graphActivity = new Intent(Graph.this,Graph2.class);
+                startActivity(graphActivity);
+            }
+        });
+        //GraphView layout = (GraphView) findViewById(R.id.graph1);
+    }
+
+    public void setDailyGraphView(GraphView graph){
+
+    }
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.graph);
-        GraphView graphView = (GraphView) findViewById(R.id.graph1);
+        graphView = (GraphView) findViewById(R.id.graph1);
         DataPoint[] dataList;
         int num = 0;
         int sum = 0, minSum = 0, maxSum = 0;
@@ -214,7 +309,8 @@ public class Graph extends Activity {
 //    	    	while(numMonths > 0 ){
 //    	    		day = tmpMonth+"/"+tmpDate;
 //    	    		dates.add(day);
-//    	    		if(tmpDate == 1){
+//    	    		if(tmpDate == 1)
+//   {
 //    	    			
 //    	    			//TO DO
 //    	    			//tmpMonth = currentDate.set
@@ -224,5 +320,14 @@ public class Graph extends Activity {
 //    	     }
     	}
     	return dates;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent emotionTracks = new Intent(getApplicationContext(),TrackingActivity.class);
+        emotionTracks.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(emotionTracks);
+        finish();
     }
 }

@@ -106,4 +106,11 @@ public class JournalActivity extends Activity{
 			}
 		});
 	}
+	public void onBackPressed() {
+		super.onBackPressed();
+		Intent emotionTracks = new Intent(getApplicationContext(),TrackingActivity.class);
+		emotionTracks.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
+		startActivity(emotionTracks);
+		finish();
+	}
 }

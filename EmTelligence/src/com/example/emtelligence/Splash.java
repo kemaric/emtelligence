@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
- 
+import com.firebase.client.Firebase;
 public class Splash extends Activity {
  
 	private static String TAG = Splash.class.getName();
@@ -19,7 +19,8 @@ public class Splash extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	 
+		Firebase.setAndroidContext(this);
+
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);    // Removes title bar
 	    this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);    // Removes notification bar
 	 

@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/EmTelligence/libs" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="https://github.com/sendgrid/sendgrid-java" />
+    </JAVADOC>
     <SOURCES />
     <jarDirectory url="file://$PROJECT_DIR$/EmTelligence/libs" recursive="false" />
   </library>

@@ -17,6 +17,7 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 
+import java.lang.Override;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -46,7 +47,6 @@ public class Graph2 extends Activity {
         JournalDatabaseAdaper sqlhelper = new JournalDatabaseAdaper(this);
         ArrayList<JournalEntry> JournalList;
         JournalList = (ArrayList<JournalEntry>) sqlhelper.getJournalEntries(null,null,null);
-        String date = "", tempDate = "";
         HashMap<Date,Integer> negEmotionDates = new HashMap<Date,Integer>();
         HashMap<Date,Integer> posEmotionDates = new HashMap<Date,Integer>();
         if(JournalList.size() != 0){
@@ -175,12 +175,21 @@ public class Graph2 extends Activity {
         switchGraph.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent graphActivity = new Intent(Graph2.this,Graph.class);
+				Intent graphActivity = new Intent(getApplicationContext(),Graph.class);
 				startActivity(graphActivity);
 			}
 		});
         //GraphView layout = (GraphView) findViewById(R.id.graph2);
 
         //layout.addView(graphView);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent emotionTracks = new Intent(getApplicationContext(),TrackingActivity.class);
+        emotionTracks.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(emotionTracks);
+        finish();
     }
 }

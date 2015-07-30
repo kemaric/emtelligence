@@ -1,0 +1,26 @@
+{"users":[
+	{"_id":"xxxxx",
+	"password":"xxxxxx",
+	"name":"xxxxx",
+	"age":999,
+	"address":{"state":"xxxxx",
+				"city":"xxxxxx",
+				"zipcode":"xxxxx"
+				},
+	"sex":"M"
+
+	},
+	{"_id":"xxxxx",
+	"password":"xxxxxx",
+	"name":"xxxxx",
+	"age":999,
+	"address":{"state":"xxxxx",
+				"city":"xxxxxx",
+				"zipcode":"xxxxx"
+				},
+	"sex":"F"
+
+	}
+	]
+
+}
